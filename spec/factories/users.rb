@@ -5,6 +5,5 @@ FactoryGirl.define do
     email { Faker::Internet.email}
     password "MyString"
     password_confirmation "MyString"
-    password_digest "MyString"
   end
 end

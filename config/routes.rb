@@ -1,13 +1,10 @@
 FlatironAlumniApp::Application.routes.draw do
+  devise_for :users
   resources :users
 
-  get "sessions/new"
   get "pages/dashboard"
   get "pages/search"
   get "pages/calendar"
-  get 'signup', to: 'users#new', as: 'signup'
-	get 'login', to: 'sessions#new', as: 'login'
-	get 'logout', to: 'sessions#destroy', as: 'logout'
 
 	resources :users, :sessions, :students
 
