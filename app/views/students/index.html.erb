@@ -21,8 +21,9 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.name %></td>
-        <td><%= student.email %></td>
+        <td><%= student.firstname %></td>
+        <td><%= student.lastname %></td>
+        <td><%= student.user.email %></td>
         <td><%= student.city %></td>
         <td><%= student.state %></td>
         <td><%= student.linkedin %></td>

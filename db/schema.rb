@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119145404) do
+ActiveRecord::Schema.define(version: 20131119174434) do
 
   create_table "students", force: true do |t|
     t.string   "name"
-    t.string   "email"
     t.string   "city"
     t.string   "state"
     t.string   "linkedin"
@@ -27,6 +26,16 @@ ActiveRecord::Schema.define(version: 20131119145404) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
+    t.integer  "user_id"
+  end
+
+  add_index "students", ["user_id"], name: "index_students_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

@@ -5,7 +5,6 @@ FactoryGirl.define do
   factory :student do
     firstname { Faker::Name.first_name }
     lastname { Faker::Name.last_name }
-    email { Faker::Internet.email }
     city { Faker::Address.city }
     state { Faker::Address.state }
     linkedin "linkedin"
@@ -13,12 +12,12 @@ FactoryGirl.define do
     github "github"
     cohort "semester"
     unique "Test"
-  
 
-  factory :invalid_student do
-    firstname nil
-    lastname nil
-    end
+	  factory :invalid_student do
+	    firstname nil
+	    lastname nil
+
+ 		end
   end
 end
 

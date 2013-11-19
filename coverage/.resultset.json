@@ -1,19 +1,30 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/rosannehoyem/Development/code/flatiron/final-project/flatiron-alumni-app/app/models/student.rb": [
-        1,
-        1,
+      "/Users/jeanne/Development/rails/flatiron-alumni-app/app/models/student.rb": [
         1,
         1,
         null,
         1,
-        8,
+        1,
+        null,
+        1,
+        null,
+        1,
+        5,
         null,
         null,
         null
+      ],
+      "/Users/jeanne/Development/rails/flatiron-alumni-app/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1384875294
+    "timestamp": 1384887488
   }
 }
