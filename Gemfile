@@ -40,6 +40,12 @@ gem 'linkedin'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 
+# add forem
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'friendly_id', github: "FriendlyId/friendly_id"
+gem 'cancan', git: "https://github.com/nukturnal/cancan.git"
+gem 'will_paginate', '3.0.4'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

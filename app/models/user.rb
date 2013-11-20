@@ -39,4 +39,9 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  def to_s
+  	name
+	end
+	
 end
