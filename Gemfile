@@ -37,6 +37,8 @@ end
 gem 'bcrypt-ruby'
 
 gem 'linkedin'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 # Use unicorn as the app server
 # gem 'unicorn'
