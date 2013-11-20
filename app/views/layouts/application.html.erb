@@ -8,9 +8,6 @@
   <link rel='stylesheet' id='google_merriweather-css'  href='http://fonts.googleapis.com/css?family=Merriweather:400,700&ver=3.5' type='text/css' media='all' />
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
 	  <div class="main-wrapper">
     <div class="header-wrapper">
       <div class="header">
@@ -88,22 +85,21 @@
     </div> --><!-- .link-subs -->
     </div>
     <div id="sections" class="clearfix">
-
-
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 	
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+        <%= link_to 'Edit profile', edit_user_registration_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
 
+      <p><%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linkedin) %></p>
 
-	<%= yield %>
-
-
+      	<%= yield %>
 
 
 </div>

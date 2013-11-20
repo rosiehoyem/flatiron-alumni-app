@@ -37,6 +37,8 @@ end
 gem 'bcrypt-ruby'
 
 gem 'linkedin'
+gem 'omniauth'
+gem 'omniauth-linkedin'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -60,4 +62,5 @@ group :test, :development do
   gem "guard", ">=2.1.0"
   gem "guard-rspec"
   gem "faker"
+  gem "pry"
 end
