@@ -11,31 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120151801) do
-
-  create_table "students", force: true do |t|
-    t.string   "name"
-    t.string   "city"
-    t.string   "state"
-    t.string   "linkedin"
-    t.string   "twitter"
-    t.string   "github"
-    t.string   "cohort"
-    t.string   "unique"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.integer  "user_id"
-  end
-
-  add_index "students", ["user_id"], name: "index_students_on_user_id"
+ActiveRecord::Schema.define(version: 20131120193147) do
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -46,7 +26,16 @@ ActiveRecord::Schema.define(version: 20131120151801) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "username"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "location"
+    t.string   "linkedin"
+    t.string   "twitter"
+    t.string   "github"
+    t.string   "cohort"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
