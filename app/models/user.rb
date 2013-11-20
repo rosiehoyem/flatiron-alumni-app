@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :students
-  validates :email, presence: true, uniqueness: true
+  # validates :email, presence: true, uniqueness: true
   validates :password_confirmation, presence: true
 
   def self.from_omniauth(auth)

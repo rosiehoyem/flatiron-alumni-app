@@ -1,14 +1,16 @@
 FlatironAlumniApp::Application.routes.draw do
   
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-  
+
   resources :users
 
   get "pages/dashboard"
   get "pages/search"
   get "pages/calendar"
 
-	resources :users, :sessions, :students
+	resources :users, :students
+  # resources :sessions
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
