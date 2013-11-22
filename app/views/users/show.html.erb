@@ -2,15 +2,23 @@
   	<h2><%= @user.name %></h2>
   	<div class="row">
 			<div class="col-md-6">
-				<h2>< image_tag(@user.image) ><h2>
-        <h3>< user.current_employer ></h3>
+				<h2><%= image_tag(@user.profile_image) %><h2>
+        <h3><%= @user.current_employer %></h3>
         <p>Location: <%= @user.location %></p>
      	</div>
 			<div class="col-md-6">
 				<h4>Info:</h4>
-				<p>LinkedIn: <%= @user.linkedin %></p>
-				<p>Blog: < @user.blog ></p>
-				<p>Github: <%= @user.github %></p>
-				<p>Twitter: <%= @user.twitter %></p>
+            <p><%= link_to "LinkedIn Profile", @user.linkedin %></p>
+            <p><%= link_to "Github Repositories", @user.github %></p>
+            <p><%= link_to "Twitter", @user.twitter %></p>
+            <p><%= link_to @user.blog_name, @user.blog_url %></p>
 			</div>
-  	</div>
+		</div>
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Projects -- COMING SOON!</h3>
+		  </div>
+		  <div class="panel-body">
+		    Project Name (links to location online) -- Project Description 
+		  </div>
+		</div>
