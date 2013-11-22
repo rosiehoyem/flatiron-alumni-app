@@ -40,6 +40,9 @@ gem 'linkedin'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 
+gem 'better_errors'
+gem 'binding_of_caller'
+
 # add forem
 gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'friendly_id', github: "FriendlyId/friendly_id"

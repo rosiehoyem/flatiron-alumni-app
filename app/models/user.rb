@@ -18,7 +18,9 @@ class User < ActiveRecord::Base
       user.lastname = auth.info.last_name
       user.location = auth.info.location
       user.linkedin = auth.public_profile
-      # user.twitter =
+      user.profile_image = auth.info.image
+      #user.twitter = 
+      user.current_employer = auth.info.headline
       # user.github =
       # user.cohort =
       user.name = auth.info.name
