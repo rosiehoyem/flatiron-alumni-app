@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
+
 	def new
   	@user = User.new
 	end
@@ -12,6 +14,34 @@ class UsersController < ApplicationController
 	    render "new"
 	  end
 	end
+
+	def show
+    @user = User.find(params[:id])
+  end
+
+	def alumni
+		@users = User.all
+	end
+
+	def edit
+      
+  end
+
+	def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+
+  end
 
  private
   # Use callbacks to share common setup or constraints between actions.

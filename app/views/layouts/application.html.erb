@@ -8,7 +8,7 @@
   <link rel='stylesheet' id='google_merriweather-css'  href='http://fonts.googleapis.com/css?family=Merriweather:400,700&ver=3.5' type='text/css' media='all' />
 </head>
 <body>
-	  <div class="main-wrapper">
+	<div class="main-wrapper">
     <div class="header-wrapper">
       <div class="header">
         <div class="header-left">
@@ -25,98 +25,50 @@
           <div class="menu-header-container">
             <ul id="nav" class="nav">
               <li class="menu-item">
-                <a href="index.html">Home</a>
+                <%= link_to "Dashboard", main_app.pages_dashboard_path %>
               </li>
               <li>
-              <span>Programs</span>
-                <ul class="sub-menu">
-                  <li><a href="rubycurriculum.html">Web</a></li>
-                  <li><a href="iOScurriculum.html">iOS</a></li>
-<li><a href="http://info.flatironschool.com/highschool" target="_blank">High School</a></li>
-<li><a href="/nycworkforce1/" target="_blank">Fellowship</a></li>
-                </ul>
+                <%= link_to "Calendar", main_app.pages_calendar_path %>
               </li>
               <li>
-                <span>The School</span>
-
-                <ul class="sub-menu">
-                  <li><a href="faculty.html">Faculty</a></li>
-                  <li><a href="faq.html">FAQ</a></li>
-                  <li><a href="speakers.html">Guest Speakers</a></li>
-                  <li><a href="employers.html">Employers</a></li>
-                </ul>
+                <%= link_to "Forum", forem.forums_path %>
               </li>
-              <li><a class="main-nav"target="_blank" href="http://go.flatironschool.com/apply"><span>Apply</span></a></li>
               <li>
-                <span>Get Involved</span>
-
-                <ul class="sub-menu">
-                  <li><a href="employers.html">Hire</a></li>
-                  <li><a href="http://go.flatironschool.com/speak-at-flatiron-school">Speak</a></li>
-                  <li><a href="apply-mentors.html">Mentor</a></li>
-                  <li><a href="sponsors.html">Sponsor</a></li>
-                </ul>
+                <%= link_to "Help Hotline", forem.forums_path %>
+              </li>
+              <li>
+                <%= link_to "Browse Alumni", main_app.alumni_path %>
               </li>
               <li>
                 <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
               </li>
-
-              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="clear"></div>
         </div>
         <div class="clear"></div>
       </div>
-      <!-- <div class="link-subs clearfix">
-        <span>
-        <ul>
-          <li><a href="#scroll-basics">Basics</a></li>
-          <li>|</li>
-          <li><a href="#scroll-programs">Programs</a></li>
-          <li>|</li>
-          <li><a href="#scroll-structure">Structure</a></li>
-          <li>|</li>
-          <li><a href="#scroll-curriculum">Curriculum</a></li>
-           <li>|</li>
-          <li><a href="#scroll-students">Students</a></li>
-        </ul>
-      </div>
-    </div> --><!-- .link-subs -->
     </div>
     <div id="sections" class="clearfix">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-	
-      <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', main_app.edit_user_registration_path %> |
-        <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", main_app.new_user_registration_path %> |
-        <%= link_to "Login", main_app.new_user_session_path %>
-        <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
-      <% end %>
+<!--       <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
+      <!-- sign in -->
+        <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong>.
+          <%= link_to 'Edit profile', main_app.edit_user_registration_path %> |
+          <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", main_app.new_user_registration_path %> |
+          <%= link_to "Login", main_app.new_user_session_path %>
+          <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
+        <% end %>
 
-      
 
       	<%= yield %>
 
 
-</div>
-
-<div class="clear"></div>
-
-<!-- <div class="section section-blog">
-  <div class="section-title">
-    <span>Our Sponsors</span>
-  </div>
-  <img src="img/sponsors.png">
-</div>
- -->
-<div class="clear"></div>
-
-
+    </div>
+  <div class="clear"></div>
 
   </div>
 </div>
@@ -133,19 +85,6 @@
         <h2 class="widgettitle">
           <a href="http://blog.flatironschool.com">Recent Blog Posts</a>
         </h2>
-        <ul id="tumblr_feed"><!-- http://blog.flatironschool.com/rss -->
-
-          <!-- <li><a href="http://blog.flatironschool.com/post/47616402524/dearest-mama-i-must-tell-you-what-my-opinion-of">
-            Reconstructionist Ada Lovelace</a></li>
-          <li><a href="http://blog.flatironschool.com/post/47427005620/cacioppo-speaking-at-flatiron-school-about-my">
-          Cacioppo speaking at Flatiron School</a></li>
-          <li><a href="http://blog.flatironschool.com/post/44617956534/jongrover-is-dropping-some-serious-front-end">
-            Jon Grover dropping front-end knowledge</a></li>
-          <li><a href="http://blog.flatironschool.com/post/42945124796/programmer-of-the-day-grace-hopper">
-            Programmer Of The Day: Grace Hopper</a></li>
-          <li><a href="http://blog.flatironschool.com/post/42519135705/programer-of-the-day-matz">
-            Programer of the day: Matz!</a></li> -->
-        </ul>
       </div>
       <div id="ok-twitter-4" class="footer-widget ok-twitter">
         <div class="twitter-widget">

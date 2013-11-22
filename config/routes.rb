@@ -18,7 +18,9 @@ FlatironAlumniApp::Application.routes.draw do
   get "pages/dashboard"
   get "pages/search"
   get "pages/calendar"
-  
+
+  # get "/alumni" => "users#alumni"
+  get'alumni'=>'users#alumni'
 
   # resources :sessions
   
