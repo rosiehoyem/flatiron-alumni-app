@@ -52,4 +52,10 @@ class User < ActiveRecord::Base
   	name
 	end
 	
+  def linkedin_request
+    client = LinkedIn::Client.new(api_key, secret_key)
+    rtoken = client.request_token.token
+    rsecret = client.request_token.secret
+  end
+
 end
