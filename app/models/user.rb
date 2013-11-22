@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def name 
+    @name = self.firstname.to_s + " " + self.lastname.to_s
+  end
+
   def password_required?
     super && provider.blank?
   end
