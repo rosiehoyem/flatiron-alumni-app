@@ -2,7 +2,7 @@
   	<h2><%= @user.name %></h2>
   	<div class="row">
 			<div class="col-md-6">
-				<h2><%= image_tag(@user.profile_image) %><h2>
+				<h2><%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %><h2>
         <h3><%= @user.current_employer %></h3>
         <p>Location: <%= @user.location %></p>
      	</div>
