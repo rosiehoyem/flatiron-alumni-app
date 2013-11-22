@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   end
 
   def search
+  	@users = User.search(params[:search])
   end
 
   def calendar
