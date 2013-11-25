@@ -13,7 +13,7 @@ Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
-  config.mailer = Welcome
+  #config.mailer = Welcome
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -228,7 +228,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :linkedin, ENV["api_key"], ENV["secret_key"], :scope => 'r_fullprofile'
+  config.omniauth :linkedin, ENV["api_key"], ENV["secret_key"]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
