@@ -2,24 +2,40 @@
 <%= render 'header' %>
 
 <h2>Browse Profiles</h2>
-    <% @users.each do |user| %>
-      <div class="well">
-        <h3><%= user.name %></h3>
-        <div class="row">
-          <div class="col-md-6">
-            <%= image_tag(user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
-            <h3><%= user.current_employer %></h3>
-            <p>Location: <%= user.location %></p>
-          </div>
-          <div class="col-md-6">
-            <h4>Info:</h4>
-            <p><%= link_to "LinkedIn Profile", user.linkedin %></p>
-            <p><%= link_to "Github Repositories", user.github %></p>
-            <p><%= link_to "Twitter", user.twitter %></p>
-            <p><%= link_to user.blog_name, user.blog_url %></p>
-          </div>
-        <p><%= link_to 'See Full Student Profile', user_path(user), class: "btn btn-lg" %></p>
-        </div>
+    <% @users.each_with_index do |user, index| %>
+    <div class="row"> <div class="well">
+      <% if user.employer == false %>
+              <% if  index.even? %>
+              
+                <div class="col-md-6">
+                <h3><%= user.name %></h3>
+                 <h3><%= user.current_employer %></h3>
+                  <p>Location: <%= user.location %></p>
+                  <h4>Info:</h4>
+                  <p><%= link_to "LinkedIn Profile", user.linkedin %></p>
+                  <p><%= link_to "Github Repositories", user.github %></p>
+                  <p><%= link_to user.blog_name, user.blog_url %></p>
+                  <p><%= link_to 'See Full Student Profile', user_path(user), class: "btn btn-md" %></p>
+                </div>
+
+                <% else %>
+                <div class="col-md-6">
+                <h3><%= user.name %></h3>
+                 <h3><%= user.current_employer %></h3>
+                  <p>Location: <%= user.location %></p>
+                  <h4>Info:</h4>
+                  <p><%= link_to "LinkedIn Profile", user.linkedin %></p>
+                  <p><%= link_to "Github Repositories", user.github %></p>
+                  <p><%= link_to user.blog_name, user.blog_url %></p>
+                  <p><%= link_to 'See Full Student Profile', user_path(user), class: "btn btn-md" %></p>
+                </div>
+                <%end%>
+
+                </div>
+                </div>
+              
+              
+        <% end %>
       </div>
     <% end %>
 
