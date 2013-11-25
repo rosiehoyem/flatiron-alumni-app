@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       current_user.save
       employer_path
     else  
-      current_user_path
+      user_path(current_user)
     end
   end
 

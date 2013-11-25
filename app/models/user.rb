@@ -21,8 +21,6 @@ class User < ActiveRecord::Base
       user.profile_image = auth.info.image
       user.current_employer = auth.info.headline
       user.name = auth.info.name
-      user.current_employer = auth.info.positions
-      raise params.inspect
     end
   end
 

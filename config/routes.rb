@@ -12,7 +12,6 @@ FlatironAlumniApp::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"} do
 
     get'users/sign_out'=>'devise/sessions#destroy'
-    #get 'sessions/new' => 'sessions#new'
 
   end
 
@@ -28,13 +27,12 @@ FlatironAlumniApp::Application.routes.draw do
 
   # resources :sessions
   
-  
+  root 'pages#welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#dashboard'
 
   get '/employer_dash' => 'employer#index', as: :employer
 
