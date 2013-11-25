@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:linkedin]
 	has_many :students
+  has_many :jobs
   # validates :email, presence: true, uniqueness: true
   # validates :password_confirmation, presence: true
 

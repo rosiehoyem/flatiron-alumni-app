@@ -10,11 +10,16 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    
   end
 
   # GET /jobs/new
   def new
+    if current_user.employer == false
+      redirect_to jobs_path
+     end 
     @job = Job.new
+
   end
 
   # GET /jobs/1/edit
@@ -25,16 +30,9 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
-
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @job }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
-    end
+    @job.save
+    redirect_to @job
+    
   end
 
   # PATCH/PUT /jobs/1
@@ -69,6 +67,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params[:job]
+      params[:job].permit(:title, :contact, :description, :user_id)
     end
 end

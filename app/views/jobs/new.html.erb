@@ -1,5 +1,16 @@
-<h1>New job</h1>
+<h1>Create new job posting</h1>
 
-<%= render 'form' %>
+<%= form_for(@job) do |f| %>
+
+ Enter Job Tilte: <%= f.text_field :title %><br>
+ Enter Description: <%= f.text_field :description %><br>
+Enter Contact Email Or Phone Number: <%= f.text_field :contact, value: current_user.email %>
+<%= f.hidden_field :user_id, value: current_user.id  %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', jobs_path %>
+

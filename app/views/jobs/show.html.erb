@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
+<br><br>
+Posted by: <%= User.find(@job.user_id).name %><br>
+Job title :<%= @job.title %><br>
+
+Description<%= @job.description %><br>
+
+
+Reply to:<%= @job.contact %><br>
+
+<% if current_user.id == @job.user_id.to_i %>
+  <%= link_to 'Edit', edit_job_path(@job) %> |
+<%end%>
+
 <%= link_to 'Back', jobs_path %>
