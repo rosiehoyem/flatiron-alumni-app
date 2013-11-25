@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122143605) do
+ActiveRecord::Schema.define(version: 20131125190814) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20131122143605) do
     t.string   "past_work"
     t.string   "current_employer",       default: "Looking for opportunities"
     t.string   "profile_image",          default: "missing_profile.jpg"
+    t.boolean  "employer",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

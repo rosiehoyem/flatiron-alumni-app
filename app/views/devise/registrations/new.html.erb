@@ -13,8 +13,8 @@
 	  <%= f.password_field :password %></div>
 
 	  <div><%= f.label :password_confirmation %><br />
-	  <%= f.password_field :password_confirmation %></div>
-
+	  <%= f.password_field :password_confirmation %></div><br>
+    <div> Employer? <%= select_tag "emp", options_for_select([ "Yes", "No" ], "No") %></div><br>
 	<% end %>
 
   <div><%= f.submit "Sign up" %></div>

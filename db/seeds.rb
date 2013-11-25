@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
 Forem::Group.create([{:name => 'Ruby 003'}, {:name => 'Ruby 002'}, {:name => 'Ruby 001'}, {:name => 'Ruby 000'}, {:name => 'iOS 000'}, {:name => 'Fellowship 000'}])
 Forem::Category.create([{:name => 'Ruby on Rails'}, {:name => 'iOS'}])
 Forem::Forum.create([{:name => 'Events', :category_id => '1'}, {:name => 'Jobs', :category_id => '1'}, {:name => 'Resources', :category_id => '1'}, {:name => 'Help Line', :category_id => '1'}])

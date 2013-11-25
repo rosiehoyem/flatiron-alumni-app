@@ -44,6 +44,12 @@ class UsersController < ApplicationController
 
   end
 
+  def employer
+    if current_user.employer == false
+      redirect_to root
+    end  
+  end  
+
  private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
