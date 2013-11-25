@@ -10,6 +10,7 @@ FlatironAlumniApp::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"} do
 
     get'users/sign_out'=>'devise/sessions#destroy'
+    #get 'sessions/new' => 'sessions#new'
 
   end
 

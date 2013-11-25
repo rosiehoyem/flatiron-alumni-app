@@ -1,4 +1,4 @@
-class Welcome < Devise::Mailer
+class Welcome < ActionMailer::Base
   helper :application
   default from: "info@flatironschool.com"
 
