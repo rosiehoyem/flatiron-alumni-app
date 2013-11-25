@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+	<strong>Contributors: </strong>
+	<ul>
+		<% @project.project_contributors.each do |project_contributor| %>
+      	<li><%= project_contributor.user.name %>:
+      	<%= project_contributor.contribution  %></li>
+    <% end %>
+   </ul>
+</p>
+<p><strong>Add Your Contribution:</strong></p>
+	<%= form_tag("/projects/#{@project.id}/add_contributor", method: "get") do %>
+  <div class="add-contribution">
+		<div class="field">
+	    <%= label_tag :contribution %><br>
+	    <%= text_field_tag :contribution %>
+	  </div>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
