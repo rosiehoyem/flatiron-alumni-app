@@ -1,5 +1,7 @@
 FlatironAlumniApp::Application.routes.draw do
 
+  resources :jobs
+
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
   # If you would like to change where this extension is mounted, simply change the :at option to something different.
@@ -33,6 +35,7 @@ FlatironAlumniApp::Application.routes.draw do
   root 'pages#dashboard'
 
   get '/employer_dash' => 'employer#index', as: :employer
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

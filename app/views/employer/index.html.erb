@@ -3,11 +3,11 @@
 
 <h2>Browse Profiles</h2>
     <% @users.each_with_index do |user, index| %>
-    <div class="row"> <div class="well">
-      <% if user.employer == false %>
+    
+
               <% if  index.even? %>
               
-                <div class="col-md-6">
+                <div class="rgthcol">
                 <h3><%= user.name %></h3>
                  <h3><%= user.current_employer %></h3>
                   <p>Location: <%= user.location %></p>
@@ -19,7 +19,7 @@
                 </div>
 
                 <% else %>
-                <div class="col-md-6">
+                <div class="lfthcol">
                 <h3><%= user.name %></h3>
                  <h3><%= user.current_employer %></h3>
                   <p>Location: <%= user.location %></p>
@@ -31,12 +31,8 @@
                 </div>
                 <%end%>
 
-                </div>
-                </div>
-              
-              
-        <% end %>
-      </div>
+    
+
     <% end %>
 
 
