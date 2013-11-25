@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-
+  layout false
   # GET /jobs
   # GET /jobs.json
   def index
@@ -10,7 +10,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    
+
   end
 
   # GET /jobs/new
