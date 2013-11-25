@@ -1,0 +1,26 @@
+<div class='well'>
+  <h3>Recent Projects</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Contributors</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.description %></td>
+          <td><%= project.users.name %></td>
+          <td><%= link_to 'Show', project %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
