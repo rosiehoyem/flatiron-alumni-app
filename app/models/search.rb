@@ -1,41 +1,19 @@
-def products
-  @products ||= find_products
-end
+class Search < ActiveRecord::Base
 
-private
+	def users
+	  @users ||= find_users
+	end
 
-def find_products
-  Product.find(:all, :conditions => conditions)
-end
+	private
 
-def keyword_conditions
-  ["products.name LIKE ?", "%#{keywords}%"] unless keywords.blank?
-end
+	def find_users
+	  users = User.order(:name)
+	  users = users.where(for_hire: for_hire) if for_hire.present?
+	  users = users.where("name like ?", "%#{keywords}%") if keywords.present?
+	  users = users.where("location like ?", "%#{location}%") if location.present?
+	  users = users.where(skills: skills) if skills.present?
+	  users = users.where(experience: experience) if experience.present?
+	  users
+	end
 
-def minimum_price_conditions
-  ["products.price >= ?", minimum_price] unless minimum_price.blank?
-end
-
-def maximum_price_conditions
-  ["products.price <= ?", maximum_price] unless maximum_price.blank?
-end
-
-def category_conditions
-  ["products.category_id = ?", category_id] unless category_id.blank?
-end
-
-def conditions
-  [conditions_clauses.join(' AND '), *conditions_options]
-end
-
-def conditions_clauses
-  conditions_parts.map { |condition| condition.first }
-end
-
-def conditions_options
-  conditions_parts.map { |condition| condition[1..-1] }.flatten
-end
-
-def conditions_parts
-  private_methods(false).grep(/_conditions$/).map { |m| send(m) }.compact
 end

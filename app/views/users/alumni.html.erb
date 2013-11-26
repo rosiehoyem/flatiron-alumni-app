@@ -1,9 +1,15 @@
 <div class="well">
-  <%= link_to "Search Students", pages_search_path %>
- 
+  <strong>Search Students by Name: </strong>
+  <% form_tag users_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <% end %>
+  <p><%= link_to "Advanced Search", new_search_path %></p>
 </div>
 
-<h2>All Studets</h2>
+<h2>All Students</h2>
     <% @users.each do |user| %>
       <div class="well">
       	<h3><%= user.name %></h3>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122143605) do
+ActiveRecord::Schema.define(version: 20131125235902) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -108,6 +108,34 @@ ActiveRecord::Schema.define(version: 20131122143605) do
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id"
 
+  create_table "project_contributors", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.string   "contribution"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_contributors", ["project_id"], name: "index_project_contributors_on_project_id"
+  add_index "project_contributors", ["user_id"], name: "index_project_contributors_on_user_id"
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
+    t.string   "keywords"
+    t.string   "location"
+    t.string   "experience"
+    t.string   "skills"
+    t.boolean  "for_hire"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -142,6 +170,8 @@ ActiveRecord::Schema.define(version: 20131122143605) do
     t.string   "past_work"
     t.string   "current_employer",       default: "Looking for opportunities"
     t.string   "profile_image",          default: "missing_profile.jpg"
+    t.string   "token"
+    t.string   "secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
