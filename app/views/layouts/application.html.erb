@@ -1,6 +1,7 @@
 
 
 
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -44,6 +45,9 @@
                   <li class="menu-item">
                     <%= link_to "Job postings", jobs_path %>
                   </li>
+                   <li>
+                     <%= link_to "Browse Projects", main_app.projects_path %>
+                  </li>
                   <li>
                     <%= link_to "Browse Alumni", main_app.alumni_path %>
                   </li>
@@ -60,6 +64,9 @@
                   <li class="menu-item">
                     <%= link_to "Browse Profiles", main_app.alumni_path %>
                   </li>
+                   <li>
+                      <%= link_to "Browse Projects", main_app.projects_path %>
+                  </li>
                   <li class="menu-item">
                     <%= link_to "Post Job", new_job_path %>
                   </li>
@@ -72,7 +79,6 @@
             </div>
             <div class="clear"></div>
           </div>
-        </div>
         <div id="sections" class="clearfix">
     <!--       <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p> -->
@@ -92,6 +98,9 @@
  
 
           	<%= yield %>
+
+
+
 
 
 

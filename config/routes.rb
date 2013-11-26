@@ -1,6 +1,9 @@
 FlatironAlumniApp::Application.routes.draw do
 
+
   resources :jobs
+
+  resources :projects
 
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
@@ -21,18 +24,18 @@ FlatironAlumniApp::Application.routes.draw do
   get "pages/search"
   get "pages/calendar"
 
-  # get "/alumni" => "users#alumni"
   get'alumni'=>'users#alumni'
+
+  get "projects/:id/add_contributor" => "projects#add_contributor"
 
   # resources :sessions
   
-  
+  root 'pages#welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#dashboard'
 
   get '/employer_dash' => 'employer#index', as: :employer
 

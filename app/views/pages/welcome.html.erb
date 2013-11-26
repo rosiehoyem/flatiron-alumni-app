@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlatironAlumniApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link rel='stylesheet' id='google_merriweather-css'  href='http://fonts.googleapis.com/css?family=Merriweather:400,700&ver=3.5' type='text/css' media='all' />
+</head>
+<body>
+  <div class="main-wrapper">
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="header-left">
+          <a href="http://flatironschool.com/" title="The Flatiron School">
+            <h1 class="logo-text">
+                <object id="bigify" data="img/flatiron-logo-high-res.svg" type="image/svg+xml" class="logo"><%= image_tag("flatiron-logo-high-res.svg", type: "image/svg+xml", class: "logo")%>
+              </object>
+              <object id="minify" data="img/flatiron-horz-logo-high-res.svg" type="image/svg+xml" class="logo">
+              </object>
+            </h1>
+          </a>
+        </div>
+        
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+<div class="col-md-3">
+</div>
+<div class="col-md-6">
+<div id="sections" class="clearfix">
+</div>
+  <div class="clear"></div>
+      <%= image_tag("/assets/uglysplash.jpg") %>
+<%= link_to "Sign up", main_app.new_user_registration_path %> |
+          <%= link_to "Login", main_app.new_user_session_path %>
+          <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
+</div>
+<div class="col-md-3">
+</div>
+<div id="sections" class="clearfix">
+</div>
+  <div class="clear"></div>
+
+  </div>
+</div>
+<div class="footer-widgets clearfix">
+  <div class="footer-widgets-wrap clearfix">
+    <div id="text-4" class="footer-widget widget_text">
+      <h2 class="widgettitle">Contact Us</h2>
+      <div class="textwidget">
+        <p><a href="http://goo.gl/maps/ArbiA">The Flatiron School<br/>11 Broadway, Suite 260<br/>New York, NY 10004</a><br/><br/>
+          <i class="icon-phone" style="padding-right: 3px;"></i> (347) 729-7911<br/> <i class="icon-envelope" style="padding-right: 3px;"></i> <a href="mailto:info@flatironschool.com">info@flatironschool.com</a></p>
+        </div>
+      </div>
+      <div id="recent-posts-2" class="footer-widget widget_recent_entries">
+        <h2 class="widgettitle">
+          <a href="http://blog.flatironschool.com">Recent Blog Posts</a>
+        </h2>
+      </div>
+      <div id="ok-twitter-4" class="footer-widget ok-twitter">
+        <div class="twitter-widget">
+          <h2 class="widgettitle">
+            Twitter <a href="http://twitter.com/flatironschool">@FlatironSchool</a>
+          </h2>
+          <!-- tweets appear here via js/custom.js //TWITTER FOOTER WIDGET -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="footer">
+    <div class="footer-text">
+      <div class="footer-text-left">
+        <div class="menu">
+          <ul>
+            <li>
+              <a href="index.html">
+                <i class="icon-home icon-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/flatironschool">
+                <i class="icon-twitter icon-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.facebook.com/FlatironSchool">
+                <i class="icon-facebook-sign icon-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://instagram.com/flatironschool">
+                <i class="icon-camera-retro icon-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="http://www.linkedin.com/company/the-flatiron-school">
+                <i class="icon-linkedin-sign icon-2x"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/flatiron-school">
+                <i class="icon-github-alt icon-2x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-text-right">
+        <div class="copyright">&copy; 2013. The Flatiron School.  All Your Rights Are Belong To Us. | <a href="http://nytm.org/made-in-nyc" target="_blank">Made in NYC</a></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

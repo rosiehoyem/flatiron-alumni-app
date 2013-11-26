@@ -42,7 +42,8 @@ gem 'omniauth-linkedin'
 
 gem 'better_errors'
 gem 'binding_of_caller'
-# gem 'charlock_holmes'
+#gem 'charlock_holmes' - optional for future transcoding of csv files
+
 
 # add forem
 gem 'forem', :github => "radar/forem", :branch => "rails4"

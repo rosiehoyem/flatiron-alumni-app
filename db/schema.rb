@@ -108,14 +108,30 @@ ActiveRecord::Schema.define(version: 20131125210424) do
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id"
 
+
   create_table "jobs", force: true do |t|
     t.string   "user_id"
     t.string   "title"
     t.string   "description"
     t.string   "contact"
+
+  create_table "project_contributors", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.string   "contribution"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "project_contributors", ["project_id"], name: "index_project_contributors_on_project_id"
+  add_index "project_contributors", ["user_id"], name: "index_project_contributors_on_user_id"
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
