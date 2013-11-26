@@ -25,9 +25,10 @@ if (y==null || y=="")
  <tbody>
 
 
-<%= form_for @emp, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
+<%= form_for @emp, :url => updy_emp_path, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
   <tr><td class="emp">First Name:</td><td> <%= f.text_field :firstname %></td></tr>
  <tr><td class="emp"> Last Name: </td><td><%= f.text_field :lastname %></td></tr>
+ <tr><td class="emp"> Company: </td><td><%= f.text_field :company %></td></tr>
  <tr><td class="emp"> Email: </td><td><%= f.text_field :email %></td></tr>
   
   <%= f.hidden_field :id, :value => @emp.id %>
