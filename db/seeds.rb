@@ -10,6 +10,10 @@ Forem::Group.create([{:name => 'Ruby 003'}, {:name => 'Ruby 002'}, {:name => 'Ru
 Forem::Category.create([{:name => 'Ruby on Rails'}, {:name => 'iOS'}])
 Forem::Forum.create([{:name => 'Events', :category_id => '1'}, {:name => 'Jobs', :category_id => '1'}, {:name => 'Resources', :category_id => '1'}, {:name => 'Help Line', :category_id => '1'}])
 
+
 #Seed data for the project/project-contributor models
 projects = Project.create([{name: 'Flatiron Alumni Site', description: 'The fabulous site you are on!'}, {name: 'Logg.io', description: 'An social application for logging workouts.'}])
+
+
+
 

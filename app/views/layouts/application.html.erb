@@ -36,15 +36,14 @@
                   <li>
                     <%= link_to "Forum", forem.forums_path %>
                   </li>
-        
                   <li class="menu-item">
-                    <%= link_to "Job postings", jobs_path %>
+                    <%= link_to "Jobs", jobs_path %>
                   </li>
                    <li>
-                     <%= link_to "Browse Projects", main_app.projects_path %>
+                     <%= link_to "Projects", main_app.projects_path %>
                   </li>
                   <li>
-                    <%= link_to "Browse Alumni", main_app.alumni_path %>
+                    <%= link_to "Alumni", main_app.alumni_path %>
                   </li>
                   <li>
                     <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
@@ -75,6 +74,7 @@
             </div>
             <div class="clear"></div>
           </div>
+        </div>
         <div id="sections" class="clearfix">
     <!--       <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p> -->
@@ -85,16 +85,12 @@
               <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
             <% end %>
 
-
-
- 
+        
 
           	<%= yield %>
 
-
-
         </div>
-      <div class="clear"></div>
+        <div class="clear"></div>
 
       </div>
     </div>
