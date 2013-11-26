@@ -7,6 +7,24 @@
  */
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+
+
+
+.emps > tbody > tr:nth-child(odd) > td,
+.emps> tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+
+.emp {
+  padding-bottom: 15px !important;
+}
+.newemp{
+  width: 50%;
+  padding: 10px !important;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
 .table-topic{
   padding: 10px !important;
   margin-top: 15px;
