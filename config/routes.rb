@@ -9,7 +9,7 @@ FlatironAlumniApp::Application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
   
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"} do
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} do
 
     get'users/sign_out'=>'devise/sessions#destroy'
 
@@ -35,6 +35,8 @@ FlatironAlumniApp::Application.routes.draw do
   root 'pages#dashboard'
 
   get '/employer_dash' => 'employer#index', as: :employer
+
+  get '/employer/:id/edit' => 'employer#edit', as: :edit_employer_profile
 
 
   # Example of regular route:
