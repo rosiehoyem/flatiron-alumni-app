@@ -12,9 +12,6 @@ class RepliesController < ApplicationController
 end
 
 
-# "reply"=>
-# {"content"=>"use \r\n.class {\r\nbackground: #color;\r\n}",
-#  "user_id"=>"1", "forum_id"=>"4"}
  private
   
 
