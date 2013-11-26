@@ -4,9 +4,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:linkedin]
+
+	has_many :students
+  has_many :jobs
+  # validates :email, presence: true, uniqueness: true
+  # validates :password_confirmation, presence: true
+
   
   has_many :project_contributors
   has_many :projects, through: :project_contributors      
+
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

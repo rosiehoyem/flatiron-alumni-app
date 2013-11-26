@@ -8,6 +8,17 @@
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
+.lftcol {
+  width: 40%;
+  float: left;
+}
+
+.rgthcol {
+  width: 30%;
+  float: right;
+
+}
+
 article,
 aside,
 details,

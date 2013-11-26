@@ -6,10 +6,10 @@ class ApplicationController < ActionController::Base
   helper_method :forem_user
 
   def after_sign_in_path_for(resource)
-    
-    if params[:emp] == 'Yes'
-      current_user.employer = true
-      current_user.save
+    if session[:new_emp] == true
+      session[:new_emp] = nil 
+      edit_employer_profile_path(current_user)
+    elsif current_user.employer == true
       employer_path
     else  
       user_path(current_user)

@@ -1,0 +1,30 @@
+
+<% if current_user.id == @job.user_id.to_i %>
+
+    <h1>Edit Job</h1>
+
+    <%= form_for(@job) do |f| %>
+
+       Enter Job Tilte: <%= f.text_field :title, value: @job.title %>
+       <br>
+       Enter Description: <%= f.text_field :description, value: @job.description %>
+       <br>
+       Enter Contact Email Or Phone Number: <%= f.text_field :contact, value: current_user.email %>
+       <%= f.hidden_field :user_id, value: current_user.id  %>
+      
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+
+
+
+<% else %>
+    <br>
+    You don't have permission to edit this Job:(
+    <br>
+<%end%>
+
+
+<%= link_to 'Back', jobs_path %>
+

@@ -1,150 +1,185 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>FlatironAlumniApp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-  <link rel='stylesheet' id='google_merriweather-css'  href='http://fonts.googleapis.com/css?family=Merriweather:400,700&ver=3.5' type='text/css' media='all' />
-</head>
-<body>
-	<div class="main-wrapper">
-    <div class="header-wrapper">
-      <div class="header">
-        <div class="header-left">
-          <a href="http://flatironschool.com/" title="The Flatiron School">
-            <h1 class="logo-text">
-                <object id="bigify" data="img/flatiron-logo-high-res.svg" type="image/svg+xml" class="logo"><%= image_tag("flatiron-logo-high-res.svg", type: "image/svg+xml", class: "logo")%>
-              </object>
-              <object id="minify" data="img/flatiron-horz-logo-high-res.svg" type="image/svg+xml" class="logo">
-              </object>
-            </h1>
-          </a>
+
+
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>FlatironAlumniApp</title>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
+      <link rel='stylesheet' id='google_merriweather-css'  href='http://fonts.googleapis.com/css?family=Merriweather:400,700&ver=3.5' type='text/css' media='all' />
+    </head>
+    <body>
+      <div class="main-wrapper">
+        <div class="header-wrapper">
+          <div class="header">
+            <div class="header-left">
+              <a href="http://flatironschool.com/" title="The Flatiron School">
+                <h1 class="logo-text">
+                    <object id="bigify" data="img/flatiron-logo-high-res.svg" type="image/svg+xml" class="logo"><%= image_tag("flatiron-logo-high-res.svg", type: "image/svg+xml", class: "logo")%>
+                  </object>
+                  <object id="minify" data="img/flatiron-horz-logo-high-res.svg" type="image/svg+xml" class="logo">
+                  </object>
+                </h1>
+              </a>
+            </div>
+            <div class="header-right">
+              <div class="menu-header-container">
+                <ul id="nav" class="nav">
+                  
+                    <% if !current_user  || current_user.employer == false %>
+                    <li class="menu-item">
+                    <%= link_to "Dashboard", main_app.pages_dashboard_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Calendar", main_app.pages_calendar_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Forum", forem.forums_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Help Hotline", forem.forums_path %>
+                  </li>
+                  <li class="menu-item">
+                    <%= link_to "Job postings", jobs_path %>
+                  </li>
+                   <li>
+                     <%= link_to "Browse Projects", main_app.projects_path %>
+                  </li>
+                  <li>
+                    <%= link_to "Browse Alumni", main_app.alumni_path %>
+                  </li>
+                  <li>
+                    <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
+                  </li>
+
+
+                  <% else %>
+
+                   <li class="menu-item">
+                    <%= link_to "Dashboard", employer_path %>
+                  </li>
+                  <li class="menu-item">
+                    <%= link_to "Browse Profiles", main_app.alumni_path %>
+                  </li>
+                   <li>
+                      <%= link_to "Browse Projects", main_app.projects_path %>
+                  </li>
+                  <li class="menu-item">
+                    <%= link_to "Post Job", new_job_path %>
+                  </li>
+              <% end %>
+
+
+                </ul>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+          </div>
+        <div id="sections" class="clearfix">
+    <!--       <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p> -->
+          <!-- sign in -->
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', main_app.edit_user_registration_path %> |
+              <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to "Sign up", main_app.new_user_registration_path %> |
+              <%= link_to "Login", main_app.new_user_session_path %>
+              <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
+            <% end %>
+
+
+
+ 
+
+          	<%= yield %>
+
+
+
+
+
+
+
         </div>
-        <div class="header-right">
-          <div class="menu-header-container">
-            <ul id="nav" class="nav">
-              <li class="menu-item">
-                <%= link_to "Dashboard", main_app.pages_dashboard_path %>
-              </li>
-              <li>
-                <%= link_to "Calendar", main_app.pages_calendar_path %>
-              </li>
-              <li>
-                <%= link_to "Forum", forem.forums_path %>
-              </li>
-              <li>
-                <%= link_to "Help Hotline", forem.forums_path %>
-              </li>
-              <li>
-                <%= link_to "Browse Alumni", main_app.alumni_path %>
-              </li>
-              <li>
-                <%= link_to "Browse Projects", main_app.projects_path %>
-              </li>
-              <li>
-                <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
-              </li>
-            </ul>
+      <div class="clear"></div>
+
+      </div>
+    </div>
+    <div class="footer-widgets clearfix">
+      <div class="footer-widgets-wrap clearfix">
+        <div id="text-4" class="footer-widget widget_text">
+          <h2 class="widgettitle">Contact Us</h2>
+          <div class="textwidget">
+            <p><a href="http://goo.gl/maps/ArbiA">The Flatiron School<br/>11 Broadway, Suite 260<br/>New York, NY 10004</a><br/><br/>
+              <i class="icon-phone" style="padding-right: 3px;"></i> (347) 729-7911<br/> <i class="icon-envelope" style="padding-right: 3px;"></i> <a href="mailto:info@flatironschool.com">info@flatironschool.com</a></p>
+            </div>
+          </div>
+          <div id="recent-posts-2" class="footer-widget widget_recent_entries">
+            <h2 class="widgettitle">
+              <a href="http://blog.flatironschool.com">Recent Blog Posts</a>
+            </h2>
+          </div>
+          <div id="ok-twitter-4" class="footer-widget ok-twitter">
+            <div class="twitter-widget">
+              <h2 class="widgettitle">
+                Twitter <a href="http://twitter.com/flatironschool">@FlatironSchool</a>
+              </h2>
+              <!-- tweets appear here via js/custom.js //TWITTER FOOTER WIDGET -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="footer">
+        <div class="footer-text">
+          <div class="footer-text-left">
+            <div class="menu">
+              <ul>
+                <li>
+                  <a href="index.html">
+                    <i class="icon-home icon-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/flatironschool">
+                    <i class="icon-twitter icon-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.facebook.com/FlatironSchool">
+                    <i class="icon-facebook-sign icon-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://instagram.com/flatironschool">
+                    <i class="icon-camera-retro icon-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.linkedin.com/company/the-flatiron-school">
+                    <i class="icon-linkedin-sign icon-2x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/flatiron-school">
+                    <i class="icon-github-alt icon-2x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-text-right">
+            <div class="copyright">&copy; 2013. The Flatiron School.  All Your Rights Are Belong To Us. | <a href="http://nytm.org/made-in-nyc" target="_blank">Made in NYC</a></div>
           </div>
           <div class="clear"></div>
         </div>
-        <div class="clear"></div>
       </div>
     </div>
-    <div id="sections" class="clearfix">
-<!--       <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> -->
-      <!-- sign in -->
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', main_app.edit_user_registration_path %> |
-          <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
-       <!--  <#% else %>
-          <%#= link_to "Sign up", main_app.new_user_registration_path %> |
-          <%#= link_to "Login", main_app.new_user_session_path %>
-          <p><%#= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p> -->
-        <% end %>
 
-
-      	<%= yield %>
-
-
-    </div>
-  <div class="clear"></div>
-
-  </div>
-</div>
-<div class="footer-widgets clearfix">
-  <div class="footer-widgets-wrap clearfix">
-    <div id="text-4" class="footer-widget widget_text">
-      <h2 class="widgettitle">Contact Us</h2>
-      <div class="textwidget">
-        <p><a href="http://goo.gl/maps/ArbiA">The Flatiron School<br/>11 Broadway, Suite 260<br/>New York, NY 10004</a><br/><br/>
-          <i class="icon-phone" style="padding-right: 3px;"></i> (347) 729-7911<br/> <i class="icon-envelope" style="padding-right: 3px;"></i> <a href="mailto:info@flatironschool.com">info@flatironschool.com</a></p>
-        </div>
-      </div>
-      <div id="recent-posts-2" class="footer-widget widget_recent_entries">
-        <h2 class="widgettitle">
-          <a href="http://blog.flatironschool.com">Recent Blog Posts</a>
-        </h2>
-      </div>
-      <div id="ok-twitter-4" class="footer-widget ok-twitter">
-        <div class="twitter-widget">
-          <h2 class="widgettitle">
-            Twitter <a href="http://twitter.com/flatironschool">@FlatironSchool</a>
-          </h2>
-          <!-- tweets appear here via js/custom.js //TWITTER FOOTER WIDGET -->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="clear"></div>
-  <div class="footer">
-    <div class="footer-text">
-      <div class="footer-text-left">
-        <div class="menu">
-          <ul>
-            <li>
-              <a href="index.html">
-                <i class="icon-home icon-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://twitter.com/flatironschool">
-                <i class="icon-twitter icon-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.facebook.com/FlatironSchool">
-                <i class="icon-facebook-sign icon-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="http://instagram.com/flatironschool">
-                <i class="icon-camera-retro icon-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="http://www.linkedin.com/company/the-flatiron-school">
-                <i class="icon-linkedin-sign icon-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/flatiron-school">
-                <i class="icon-github-alt icon-2x"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-text-right">
-        <div class="copyright">&copy; 2013. The Flatiron School.  All Your Rights Are Belong To Us. | <a href="http://nytm.org/made-in-nyc" target="_blank">Made in NYC</a></div>
-      </div>
-      <div class="clear"></div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
+    </body>
+    </html>
