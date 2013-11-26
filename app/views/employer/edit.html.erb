@@ -1,1 +1,37 @@
-<%= @emp.id %>
+<head>
+  <script>
+function validateForm()
+{
+var x=document.forms["emp_prof"]["user[firstname]"].value;
+if (x==null || x=="")
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+var y=document.forms["emp_prof"]["user[lastname]"].value;
+if (y==null || y=="")
+  {
+  alert("Last name must be filled out");
+  return false;
+  }
+}
+</script>
+</head>
+
+<h3> Employer Profile </h3>
+
+
+
+
+<%= form_for @emp, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
+  First Name: <%= f.text_field :firstname %>
+  Last Name: <%= f.text_field :lastname %>
+  Email: <%= f.text_field :email %>
+  <br>
+  <br>
+  <%= f.hidden_field :id, :value => @emp.id %>
+  <%=f.submit 'Update Profile' %>
+
+<% end %>
+
+
