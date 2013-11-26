@@ -53,7 +53,7 @@ class ProjectsController < ApplicationController
   end
 
   def add_contributor
-    @project.project_contributors.build(:user_id =>current_user.id) 
+    @project.project_contributors.build(:user_id =>current_user.id, :contribution =>params[:contribution]) 
     @project.save
     redirect_to project_path
   end

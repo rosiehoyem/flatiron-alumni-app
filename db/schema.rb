@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20131126184315) do
+
+
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -196,6 +199,8 @@ ActiveRecord::Schema.define(version: 20131126184315) do
     t.string   "current_employer",       default: "Looking for opportunities"
     t.string   "profile_image",          default: "missing_profile.jpg"
     t.boolean  "employer",               default: false
+    t.string   "token"
+    t.string   "secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
