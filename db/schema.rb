@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125190814) do
+ActiveRecord::Schema.define(version: 20131125235902) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -122,6 +122,16 @@ ActiveRecord::Schema.define(version: 20131125190814) do
   create_table "projects", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
+    t.string   "keywords"
+    t.string   "location"
+    t.string   "experience"
+    t.string   "skills"
+    t.boolean  "for_hire"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

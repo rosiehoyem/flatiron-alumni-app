@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def search
     render layout :application
+  	@users = User.search(params[:search])
   end
 
   def calendar

@@ -1,0 +1,26 @@
+<h1>Advanced Search</h1>
+
+<%= form_for @search do |f| %>
+	<div class="field">
+    <%= f.label :for_hire %><br />
+    <%= f.select(:for_hire, [['NA', nil], ['Yes!', true], ['Not right now.', false]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br />
+    <%= f.text_field :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+    <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :skills %><br />
+    <%= f.text_field :skills %>
+  </div>
+  <br />
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

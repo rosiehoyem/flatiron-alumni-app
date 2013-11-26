@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
 	def alumni
 		@users = User.all
+    @usersearch = User.search(params[:search])
 	end
 
 	def edit
