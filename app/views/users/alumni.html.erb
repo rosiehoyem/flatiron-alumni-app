@@ -1,6 +1,6 @@
 <div class="well">
   <strong>Search Students by Name: </strong>
-  <% form_tag users_path, :method => 'get' do %>
+  <%= form_tag users_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
