@@ -45,7 +45,7 @@ FlatironAlumniApp::Application.routes.draw do
   get '/employer_dash' => 'employer#index', as: :employer
 
   get '/employer/:id/edit' => 'employer#edit', as: :edit_employer_profile
-
+  patch '/employer/:id/edit' => 'employer#updy', as: :updy_emp
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

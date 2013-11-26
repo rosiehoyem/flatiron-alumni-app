@@ -1,9 +1,20 @@
+
+<hr>
+<table class="table table-topic">
+  
+ <tbody>
 <%= form_for(@forum) do |f| %>
-  Title: <%= f.text_field :title %><br><br>
-  Content: <%= f.text_area :content, size: "40x5" %><br><br>
+  <tr><td>Title:</td> 
+    <td><%= f.text_field :title %></td>
+  </tr>
+  <tr><td>Content:</td><td> <%= f.text_area :content, size: "40x5" %></tr>
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
-    <%= f.submit "Post New Topic" %>
+   <tr><td> </td><td> <%= f.submit "Post New Topic" %></td></tr>
   </div>
 <% end %>
+
+ </tbody>
+</table>
+

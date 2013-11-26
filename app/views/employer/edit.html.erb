@@ -18,19 +18,23 @@ if (y==null || y=="")
 </script>
 </head>
 
-<h3> Employer Profile </h3>
+<h3> New Employer Profile </h3>
+
+<table class="newemp">
+  
+ <tbody>
 
 
-
-
-<%= form_for @emp, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
-  First Name: <%= f.text_field :firstname %>
-  Last Name: <%= f.text_field :lastname %>
-  Email: <%= f.text_field :email %>
-  <br>
-  <br>
+<%= form_for @emp, :url => updy_emp_path, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
+  <tr><td class="emp">First Name:</td><td> <%= f.text_field :firstname %></td></tr>
+ <tr><td class="emp"> Last Name: </td><td><%= f.text_field :lastname %></td></tr>
+ <tr><td class="emp"> Company: </td><td><%= f.text_field :company %></td></tr>
+ <tr><td class="emp"> Email: </td><td><%= f.text_field :email %></td></tr>
+  
   <%= f.hidden_field :id, :value => @emp.id %>
-  <%=f.submit 'Update Profile' %>
+ <tr><td> <%=f.submit 'Update Profile' %></td><td></td></tr>
+ </tbody>
+</table>
 
 <% end %>
 
