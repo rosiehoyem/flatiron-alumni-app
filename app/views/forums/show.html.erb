@@ -1,0 +1,20 @@
+<%= @forum.title %><br><br>
+<%= @forum.content %><br><br>
+
+<% if @replies %>
+Replies:<br><br>
+<% @replies.each do |reply| %>
+  <%=  reply.content %><br>
+  Posted by: <%= reply.user.firstname %><br><br>
+<% end %>
+<%end%>  
+
+
+<%= link_to "Add New Comment", new_reply_path(:fid => @forum.id) %> |
+
+
+
+<% if current_user.id == @forum.user_id %>
+          <%= link_to 'Edit', edit_forum_path(@forum) %>|
+           <% end %>
+<%= link_to 'Back', forums_path %>

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
 	has_many :students
   has_many :jobs
+  has_many :forums
+  has_many :replies
   # validates :email, presence: true, uniqueness: true
   # validates :password_confirmation, presence: true
 

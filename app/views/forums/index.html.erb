@@ -1,0 +1,28 @@
+<h1> Forums </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Posted by</th>
+      <th>Options</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @forums.each do |forum| %>
+      <tr>
+        <td><%= link_to forum.title, forum %></td>
+        <td> <%= User.find(forum.user_id).firstname %> </td>
+        <td> <% if current_user.id == forum.user_id %>
+          <%= link_to 'Edit', edit_forum_path(forum) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Topic', new_forum_path %>

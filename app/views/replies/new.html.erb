@@ -1,0 +1,15 @@
+
+
+Reply to:
+<%= @forum.title %>
+<%= form_for(@reply) do |f| %>
+   Content: <%= f.text_area :content, size: "40x5" %><br><br>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :forum_id, :value => @forum.id %>
+
+  <div class="actions">
+    <%= f.submit "Reply" %>
+  </div>
+<% end %>
+
+

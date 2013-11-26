@@ -1,0 +1,9 @@
+<%= form_for(@forum) do |f| %>
+  Title: <%= f.text_field :title %><br><br>
+  Content: <%= f.text_area :content, size: "40x5" %><br><br>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div class="actions">
+    <%= f.submit "Post New Topic" %>
+  </div>
+<% end %>

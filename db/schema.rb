@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125235902) do
+ActiveRecord::Schema.define(version: 20131126184315) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -108,6 +108,14 @@ ActiveRecord::Schema.define(version: 20131125235902) do
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id"
 
+  create_table "forums", force: true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "jobs", force: true do |t|
     t.string   "user_id"
     t.string   "title"
@@ -131,6 +139,14 @@ ActiveRecord::Schema.define(version: 20131125235902) do
   create_table "projects", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "replies", force: true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
