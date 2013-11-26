@@ -1,12 +1,12 @@
 
 <br><br>
 Posted by: <%= User.find(@job.user_id).name %><br>
-Job title :<%= @job.title %><br>
+Job title: <%= @job.title %><br>
 
-Description<%= @job.description %><br>
+Description: <%= @job.description %><br>
 
 
-Reply to:<%= @job.contact %><br>
+Reply to: <%= @job.contact %><br><br>
 
 <% if current_user.id == @job.user_id.to_i %>
   <%= link_to 'Edit', edit_job_path(@job) %> |
