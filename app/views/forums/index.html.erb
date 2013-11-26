@@ -5,8 +5,8 @@
     <tr>
       <th>Title</th>
       <th>Posted by</th>
+      <th>Date</th>
       <th>Options</th>
-      <th></th>
     </tr>
   </thead>
 
@@ -15,6 +15,7 @@
       <tr>
         <td><%= link_to forum.title, forum %></td>
         <td> <%= User.find(forum.user_id).firstname %> </td>
+        <td> <%= l forum.created_at, format: :short %> </td>
         <td> <% if current_user.id == forum.user_id %>
           <%= link_to 'Edit', edit_forum_path(forum) %></td>
         <% end %>
