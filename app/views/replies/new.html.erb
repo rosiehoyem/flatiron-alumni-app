@@ -1,9 +1,9 @@
 
 
-Reply to:
-<%= @forum.title %>
+Replying  to:<br>
+<%= @forum.title %><br><br>
 <%= form_for(@reply) do |f| %>
-   Content: <%= f.text_area :content, size: "40x5" %><br><br>
+  <%= f.text_area :content, size: "40x5" %><br><br>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.hidden_field :forum_id, :value => @forum.id %>
 

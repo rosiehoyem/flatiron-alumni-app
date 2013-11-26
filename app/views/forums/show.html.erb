@@ -1,20 +1,22 @@
-<%= @forum.title %><br><br>
-<%= @forum.content %><br><br>
+<h4> <%= @forum.title %></h4>
 
-<% if @replies %>
-Replies:<br><br>
+<div class="content"><%= @forum.content %></div><br><br>
+
+<% if @replies.size > 0  %>
+<br> Replies:<br><br>
 <% @replies.each do |reply| %>
-  <%=  reply.content %><br>
-  Posted by: <%= reply.user.firstname %><br><br>
+  <div class="rep"><%=  reply.content %><br>
+  Posted by: <%= reply.user.firstname %><br>
+</div><br>
 <% end %>
 <%end%>  
 
-
-<%= link_to "Add New Comment", new_reply_path(:fid => @forum.id) %> |
+<br><br>
+<%= link_to "Add New Comment", new_reply_path(:fid => @forum.id), :class=> "btn btn-md" %> |
 
 
 
 <% if current_user.id == @forum.user_id %>
-          <%= link_to 'Edit', edit_forum_path(@forum) %>|
+          <%= link_to 'Edit Topic', edit_forum_path(@forum) %>|
            <% end %>
 <%= link_to 'Back', forums_path %>
