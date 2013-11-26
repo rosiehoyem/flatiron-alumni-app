@@ -6,6 +6,7 @@
 You Don't have permission to Post a Job:(
 
 <% else %>
+
     <%= form_for(@job) do |f| %>
 
       Enter Job Tilte: <%= f.text_field :title %><br>
@@ -16,7 +17,8 @@ You Don't have permission to Post a Job:(
         <%= f.submit %>
       </div>
     <% end %>
-<%end%>
+
+<% end %>
 
 <%= link_to 'Back', jobs_path %>
 
