@@ -1,4 +1,3 @@
-
     <!DOCTYPE html>
     <html>
     <head>
@@ -25,6 +24,7 @@
             <div class="header-right">
               <div class="menu-header-container">
                 <ul id="nav" class="nav">
+              <%#= link_to 'Edit profile', main_app.edit_user_registration_path %> 
                   
                     <% if !current_user  || current_user.employer == false %>
                     <li class="menu-item">
@@ -65,8 +65,9 @@
                     <%= link_to "Post Job", new_job_path %>
                   </li>
               <% end %>
-
-
+                <% if user_signed_in? %>
+                <li> <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %> </li>
+                <% end %>
                 </ul>
               </div>
               <div class="clear"></div>
@@ -78,11 +79,7 @@
     <!--       <p class="notice"><%= notice %></p>
           <p class="alert"><%= alert %></p> -->
           <!-- sign in -->
-            <% if user_signed_in? %>
-              Logged in as <strong><%= current_user.email %></strong>.
-              <%= link_to 'Edit profile', main_app.edit_user_registration_path %> |
-              <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
-            <% else %>
+            <% if !user_signed_in? %>
               <%= link_to "Sign up", main_app.new_user_registration_path %> |
               <%= link_to "Login", main_app.new_user_session_path %>
               <p><%= link_to "Sign in with LinkedIn", main_app.user_omniauth_authorize_path(:linkedin) %></p>
@@ -91,6 +88,7 @@
         
 
           	<%= yield %>
+
         </div>
         <div class="clear"></div>
 
