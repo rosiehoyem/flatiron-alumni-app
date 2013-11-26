@@ -4,8 +4,8 @@
 
 <% if @replies.size > 0  %>
 <br> Replies:<br><br>
-<% @replies.each do |reply| %>
-  <div class="rep"><%=  reply.content %><br>
+<% @replies.each_with_index do |reply, index| %>
+  <div class="inl"><%= index+1 %>.</div><div class="rep"><%=  reply.content %><br>
   Posted by: <%= reply.user.firstname %><br>
 </div><br>
 <% end %>
@@ -17,6 +17,6 @@
 
 
 <% if current_user.id == @forum.user_id %>
-          <%= link_to 'Edit Topic', edit_forum_path(@forum) %>|
+          <%= link_to 'Edit Topic', edit_forum_path(@forum) %> |
            <% end %>
 <%= link_to 'Back', forums_path %>
