@@ -63,7 +63,7 @@
               <% end %>
             <% if user_signed_in? %>
             <li> 
-              <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %> 
+              <%= link_to "Logout", logitout_path %> 
             </li>
             <% else %>
             <li> 

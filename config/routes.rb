@@ -1,29 +1,27 @@
 FlatironAlumniApp::Application.routes.draw do
 
-  resources :forums
-    resources :replies
-  resources :jobs
+get 'users/sign_out'=> 'sessions#destroy', as: :logitout
 
-  resources :projects
 
   get "searches/new"
   get "searches/create"
   get "searches/show"
-
-  # This line mounts Forem's routes at /forums by default.
-  # This means, any requests to the /forums URL of your application will go to Forem::ForumsController#index.
-  # If you would like to change where this extension is mounted, simply change the :at option to something different.
-  #
-  # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
- 
   
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} do
 
-    get'users/sign_out'=>'devise/sessions#destroy'
+    get 'users/sign_out'=>'devise/sessions#destroy'
 
   end
 
+
+
   resources :users, :searches
+
+  resources :forums
+  resources :replies
+  resources :jobs
+
+  resources :projects
 
   get "pages/dashboard"
   get "pages/search"
