@@ -9,11 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require bootstrap
- *= require forem-bootstrap
- *= require bootswatch
- *= require variables
  *= require font-awesome
- *= require style
  *= require alumni-custom
  *= require_self
  */

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131126213341) do
+=======
+ActiveRecord::Schema.define(version: 20131126185558) do
+>>>>>>> css
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
