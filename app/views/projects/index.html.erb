@@ -25,8 +25,8 @@
         <!--Project Thumbnail (3 per row)-->
         <% @projects.each do |project| %>
         <div class="span4 thumbs">
-          <img src="img/portfolio1.jpg" alt="Image Size 430x280">
-          <%=image_tag("portfolio1", alt: "Image Size 430x280") %>
+          <!-- <img src="img/portfolio1.jpg" alt="Image Size 430x280"> -->
+          <%=image_tag("portfolio1.jpg", alt: "Image Size 430x280") %>
             <span class="title">
               <span><%= link_to project.name, project %></span>
             </span> 

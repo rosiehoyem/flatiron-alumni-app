@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126213341) do
+ActiveRecord::Schema.define(version: 20131127195639) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 20131126213341) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
+    t.string   "client"
   end
 
   create_table "replies", force: true do |t|
