@@ -10,8 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap
-// require turbolinks
-//= require_tree .
+//= require ../../../vendor/assets/breakroom/js/jquery-1.9.1
+//= require bootstrap.min
+//= require ../../../vendor/assets/breakroom/js/modernizr-2.6.2-respond-1.1.0.min
+//= require ../../../vendor/assets/breakroom/js/rotate
+//= require ../../../vendor/assets/breakroom/js/twitter-feed
+//= require ../../../vendor/assets/breakroom/js/main

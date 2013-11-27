@@ -1,6 +1,6 @@
 <h1>Editing project</h1>
 
 <%= render 'form' %>
-
+<%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Show', @project %> |
 <%= link_to 'Back', projects_path %>

@@ -1,18 +1,180 @@
-<h1>Flatiron Dashboard</h1>
 
-<div class="row">
-  <div class="col-md-6">
-  	<div class="well">
-	  	<h3>Flatiron Events</h3>
+<!--Main Content-->
+  <section id="content">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span12">
+          
+          <!--Bread Crumbs-->
+          <ul class="breadcrumb">
+            <li><a href="#">Home</a> <span class="divider">/</span></li>
+            <li class="active">Dashboard</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <h2>Flatiron Dashboard</h2>
+          <p class="lead">Learn About Who We Are</p>
+          <p>Lorem ipsum dolor sit amet, <a href="#" target="_blank">consectetur</a> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p><br />
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        
+        <!--First Column - To change progress value make sure to adjust bar width and field value to the same amount-->
+        <div class="span6">
+          <h3>Flatiron Events</h3>
+          <iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=flatironschool.com_h11vtl9a3a6sc4fj04h64mc97k%40group.calendar.google.com&amp;color=%23865A5A&amp;ctz=America%2FNew_York" style=" border-width:0 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
+        </div>
 
-			<iframe src="https://www.google.com/calendar/embed?showPrint=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=flatironschool.com_h11vtl9a3a6sc4fj04h64mc97k%40group.calendar.google.com&amp;color=%23865A5A&amp;ctz=America%2FNew_York" style=" border-width:0 " width="400" height="400" frameborder="0" scrolling="no"></iframe>
-		</div>
-  </div>
-  <div class="col-md-6">
-
-  	<%= render 'projects/recent_projects_widget' %>
-
-    <a class="twitter-timeline" width="500" height="500" data-dnt="true" href="https://twitter.com/FlatironSchool/ruby-003" data-widget-id="403614912368218112">Tweets from https://twitter.com/FlatironSchool/ruby-003</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-  </div>
-</div>
+        <!--Second Column-->
+        <div class="span6 text-left">
+          <%= render 'projects/recent_projects_widget' %>
+          <a class="twitter-timeline" width="500" height="500" data-dnt="true" href="https://twitter.com/FlatironSchool/ruby-003" data-widget-id="403614912368218112">Tweets from https://twitter.com/FlatironSchool/ruby-003</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+                
+      </div>
+    </div>
+  </section>  
+  
+  <!--Message Section-->
+  <section id="message">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span12 text-center">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Us neque, sed blandit ante. Integer eget massa blandit ante.</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!--Clients Section-->
+  <section id="team">
+  <div class="image-break"> </div>
+    <div class="container">
+      
+      <div class="row-fluid">
+        <div class="span12">
+          <h2>Our Team</h2>
+          <p class="lead">The Superstars That Make Things Happen</p>
+        </div>
+      </div>
+      
+      <div class="row-fluid">
+        
+        <!--Team Member One-->
+        <div class="span3">
+          <img src="img/team1.jpg" alt="Title">
+          <div class="title-box text-center">
+            <p>Jeff Corey | <span class="dark-gray"><em>CEO</em></span></p>
+          </div>
+          
+          <ul class="team-social-icons text-center">
+              <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+              <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-large"></i></a></li>
+              <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+          </ul> 
+        </div>
+        
+        <!--Team Member Two-->
+        <div class="span3">
+          <img src="img/team2.jpg" alt="Title">
+          <div class="title-box text-center">
+            <p>Name | <span class="dark-gray"><em>Designer</em></span></p> 
+          </div>
+          
+          <ul class="team-social-icons text-center">
+              <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+          </ul> 
+        </div>
+        
+        <!--Team Member Three-->
+        <div class="span3">
+          <img src="img/team3.jpg" alt="Title">
+          <div class="title-box text-center">
+            <p>Name | <span class="dark-gray"><em>Director</em></span></p> 
+          </div>
+          
+          <ul class="team-social-icons text-center">
+              <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+              <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+          </ul> 
+        </div>
+        
+        <!--Team Member Four-->
+        <div class="span3">
+          <img src="img/team4.jpg" alt="Title">
+          <div class="title-box text-center">
+            <p>Name | <span class="dark-gray"><em>Miracle Man</em></span></p> 
+          </div>
+          
+          <ul class="team-social-icons text-center">
+              <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+              <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-large"></i></a></li>
+              <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+          </ul> 
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  <!--Bottom Section-->
+  <section id="bottom">
+    <div class="container">
+      <div class="row-fluid">
+        
+        <!--Bottom Section One-->
+        <div class="span4">
+          <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br />
+            <a class="more" href="#">+ More</a>
+        </div>
+        
+        <!--Bottom Section Two-->
+        <div class="span4">
+          <h2>Latest Tweets</h2>
+          <div class="row-fluid">
+            <div class="span2">
+              <i class="icon-twitter icon-2x blue pull-left" style="padding-top:12px;"></i>
+            </div>
+            
+            <div class="span10">
+              <div class="twitter-feed">
+                <ul id="twitter_update_list" class="rotate"></ul>
+              </div>
+            </div>
+          </div>          
+        </div>
+        
+        <!--Bottom Section Three-->
+        <div class="span4">
+          <h2>Contact Info</h2>
+          <p>1234 Main Street | Suit 300<br />
+          Atlanta, GA 30303</p>
+          <p><i class="icon-phone"></i> <a class="more" href="tel:404.555.5555">404.555.5555</a></p>
+          
+          <!--Social Icons-->          
+          <ul class="social-icons">
+            <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+            <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+            <li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="icon-google-plus icon-large"></i></a></li>
+            <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-large"></i></a></li>
+            <li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="icon-pinterest icon-large"></i></a></li>
+            <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+            <li><a class="Github" href="http://www.github.com" target="_blank"><i class="icon-github-alt icon-large"></i></a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>

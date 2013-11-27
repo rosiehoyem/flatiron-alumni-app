@@ -1,23 +1,134 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
- 
-  <%= devise_error_messages! %>
+        <!--Main Content-->
+  <section id="content" class="sign-up-page">
+    <div class="container">
+      <div class="row-fluid">
+        
+        <div class="well span6 offset3 text-center sign-up">
+          <!-- <form id="signup" class="form-horizontal" method="post" action="#"> -->
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), class: "form-horizontal") do |f| %>
+  				<%= devise_error_messages! %>
+        <h2>Sign Up</h2>
+        
+        <div class="control-group">
+          <div class="controls">
+              <div class="input-prepend">
+               <span class="add-on"><i class="icon-user"></i></span>
+              <input type="text" class="input-xlarge" id="firstname" name="firstname" placeholder="First Name">
+            </div>
+          </div>
+        </div>
+        
+        <div class="control-group ">
+          <div class="controls">
+              <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+              <input type="text" class="input-xlarge" id="lastname" name="lastname" placeholder="Last Name">
+            </div>
+          </div>
+        </div>
+        
+        <div class="control-group">
+          <div class="controls">
+              <div class="input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span>
+              <!-- <input type="text" class="input-xlarge" id="email" name="email" placeholder="Email"> -->
+              <%= f.email_field :email, :autofocus => true, class: "input-xlarge", placeholder: "Email" %>
+            </div>
+          </div>
+        </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
- 
- 	<% if f.object.password_required? %>
+        <% if f.object.password_required? %>
 
-	  <div><%= f.label :password %><br />
-	  <%= f.password_field :password %></div>
+        <div class="control-group">
+          <div class="controls">
+              <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+              <!-- <input type="Password" id="password" class="input-xlarge" name="password" placeholder="Password"> -->
+              <%= f.password_field :password, class: "input-xlarge", placeholder: "Password" %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="control-group">
+          <div class="controls">
+              <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+              <!-- <input type="Password" id="confirm-password" class="input-xlarge" name="confirm-password" placeholder="Re-enter Password"> -->
+              <%= f.password_field :password_confirmation, class: "input-xlarge", placeholder: "Re-enter Password" %>
+            </div>
+          </div>
+        </div>
 
-	  <div><%= f.label :password_confirmation %><br />
-	  <%= f.password_field :password_confirmation %></div><br>
-    <div> Employer? <%= select_tag "emp", options_for_select([ "Yes", "No" ], "No") %></div><br>
-	<% end %>
+    		<div> Employer? 
+    			<%= select_tag "emp", options_for_select([ "Yes", "No" ], "No") %>
+    		</div><br>
+				<% end %>
+    
+        <div class="control-group">
+            <div class="controls">
+             <!-- <button type="submit" class="m-btn"><i class="icon-user"></i> Create My Account</button> -->
+              <div><%= f.submit "Sign up", class: "m-btn", class: "icon-user" %></div>
+							
+            </div>
+            <small><%link_to "Already Registered?", new_user_session_path, class: "small-message"%></small>
+        </div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+        <!-- </form> -->
+        <% end %>
 
-<%#= render "devise/shared/links" %>
+        </div><!--End Span6-->
+      </div><!--End Row-->
+    </div><!--End Container-->
+   </section>  
+    
+  <!--Bottom Section-->
+  <section id="bottom">
+    <div class="container">
+      <div class="row-fluid">
+        
+        <!--Bottom Section One-->
+        <div class="span4">
+          <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br />
+            <a class="more" href="#">+ More</a>
+        </div>
+        
+        <!--Bottom Section Two-->
+        <div class="span4">
+          <h2>Latest Tweets</h2>
+          <div class="row-fluid">
+            <div class="span2">
+              <i class="icon-twitter icon-2x blue pull-left" style="padding-top:12px;"></i>
+            </div>
+            
+            <div class="span10">
+              <div class="twitter-feed">
+                <ul id="twitter_update_list" class="rotate"></ul>
+              </div>
+            </div>
+          </div>          
+        </div>
+        
+        <!--Bottom Section Three-->
+        <div class="span4">
+          <h2>Contact Info</h2>
+          <p>1234 Main Street | Suit 300<br />
+          Atlanta, GA 30303</p>
+          <p><i class="icon-phone"></i> <a class="more" href="tel:404.555.5555">404.555.5555</a></p>
+          
+          <!--Social Icons-->          
+          <ul class="social-icons">
+            <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+            <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+            <li><a class="google" href="http://www.googleplus.com" target="_blank"><i class="icon-google-plus icon-large"></i></a></li>
+            <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-large"></i></a></li>
+            <li><a class="pinterest" href="http://www.pinterest.com" target="_blank"><i class="icon-pinterest icon-large"></i></a></li>
+            <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+            <li><a class="Github" href="http://www.github.com" target="_blank"><i class="icon-github-alt icon-large"></i></a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+  </section>
