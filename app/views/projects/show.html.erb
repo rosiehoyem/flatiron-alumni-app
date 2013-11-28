@@ -28,7 +28,7 @@
               
               <!--Item One-->
               <div class="item active">
-                <%= image_tag("pic1.jpg", alt: @project.name)%>
+                <%= image_tag @project.attachment_url(:full_size), size: "600x400", alt: @project.name %>
               </div>
               
               <!--Item Two-->

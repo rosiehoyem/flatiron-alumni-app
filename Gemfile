@@ -45,6 +45,7 @@ gem 'binding_of_caller'
 #gem 'charlock_holmes' - optional for future transcoding of csv files
 
 #for photo upload
+gem 'rmagick'
 gem 'carrierwave'
 
 # add forem
