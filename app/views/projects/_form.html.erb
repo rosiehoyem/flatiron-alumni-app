@@ -42,9 +42,15 @@
               <div class="controls">  
                 <!-- <textarea name="contact_message" id="input4" class="input-block-level" rows="8" placeholder="The message you want to send to me."></textarea>   -->
                 <%= f.label :description %>
-                <%= f.text_area :description, class: "input-block-level", rows: "8", placeholder: "Project Description" %>
+                <%= f.text_area :description, class: "input-block-level", rows: "5", placeholder: "Project Description" %> 
+              </div>
+              <div class="well well-sm">
+                <div class="field">
+                    <%= f.file_field :attachment %>
+                    <%= f.submit 'upload photo' %>
+                </div>         
               </div>  
-            </div>  
+            </div> 
             <div class="text-right">  
               <!-- <input type="hidden" name="save" value="contact"> -->  
               <!-- <button type="submit" class="m-btn">Submit</button>  -->
