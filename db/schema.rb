@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 20131128163636) do
     t.datetime "updated_at"
     t.string   "url"
     t.string   "client"
-    t.string   "photo"
+    t.string   "attachment"
   end
 
   create_table "replies", force: true do |t|
