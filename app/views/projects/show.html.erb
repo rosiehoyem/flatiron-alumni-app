@@ -50,13 +50,13 @@
         
         <!--Insert Project Details-->
         <div class="span3">
+          <p class="lead">Client</p>
+          <p><%= @project.client %></p>
+          <br />
           <p class="lead">Project Info</p>
           <p><%= @project.description %></p>
           <br />
-          <p class="lead">Details</p>
-          <p>Concept, Design, Branding, Development</p>
-          <br />
-          <a class="btn-main-small" href="#"><i class="icon-chevron-right"></i> Launch Project</a>
+          <a class="btn-main-small" href="<%= @project.url %>"><i class="icon-chevron-right"></i> Visit Project</a>
           <br><br>
           <small><%= link_to 'Edit Details of Project', edit_project_path(@project) %></small>
         </div>
