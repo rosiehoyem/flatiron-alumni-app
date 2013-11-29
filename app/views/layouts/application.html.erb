@@ -25,7 +25,7 @@
         <%= link_to image_tag("whitelogo.gif", alt: "Flatiron School", class: "brand"), root_path %>
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <% if !current_user  || current_user.employer == false %>
+            <% if current_user  && current_user.employer == false %>
               <li class="menu-item">
                 <%= link_to "Dashboard", main_app.pages_dashboard_path %>
               </li>
@@ -47,7 +47,7 @@
               <li>
                 <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
               </li>
-              <% else %>
+              <% elsif current_user %>
                <li class="menu-item">
                 <%= link_to "Dashboard", employer_path %>
               </li>
@@ -61,6 +61,8 @@
                 <%= link_to "Post Job", new_job_path %>
               </li>
               <% end %>
+
+
             <% if user_signed_in? %>
             <li> 
               <%= link_to "Logout", logitout_path %> 
