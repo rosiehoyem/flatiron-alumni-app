@@ -1,27 +1,36 @@
+<section id="content">
+  <div class="container">
+    
+    <div class="row-fluid">
+      <div class="span12">
 
+        <h2>Current openings</h2>
 
-<h1>Current openings</h1>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+          <tbody>
+            <% @jobs.each do |job| %>
+              <tr>
+                <td><%= link_to job.title, job %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= link_to job.title, job %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <br>
 
-<br>
+        <% if current_user.employer == true %>
+        <%= link_to 'Post a New Job', new_job_path %>
+        <% end %>
 
-<% if current_user.employer == true %>
-<%= link_to 'Post a New Job', new_job_path %>
-<% end %>
+      </div>
+    </div>
+  </div>
+</section>
