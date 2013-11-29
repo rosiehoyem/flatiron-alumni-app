@@ -32,11 +32,11 @@ class ProjectPhotoUploader < CarrierWave::Uploader::Base
   # end
 
   version :full_size do
-    process :resize_to_limit => [870, 600]
+    process :resize_to_fill => [870, 600]
   end
 
   version :thumb do
-    process :resize_to_limit => [430, 280]
+    process :resize_to_fill => [430, 280]
   end
 
   # Create different versions of your uploaded files:
