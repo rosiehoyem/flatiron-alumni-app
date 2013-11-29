@@ -12,6 +12,22 @@
 /* ==========================================================================
    Global styles
    ========================================================================== */
+.btn-dark-sm {
+  margin-left: 5px;
+  background: #2a2a2a;
+  font-family: 'Lato', sans-serif;
+  border-bottom: 5px solid #69ACAF;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 8px 18px;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
 
 
 p {
