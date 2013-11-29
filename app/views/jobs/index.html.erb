@@ -4,33 +4,61 @@
     <div class="row-fluid">
       <div class="span12">
 
-        <h2>Current openings</h2>
+<h2>Current openings</h2>
 
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
+<% count = @jobs.all.size %>
+ <% i = 0 %>
+<% while i != count %>
+<div class="row-fluid">
+ 
+    <div class="span6"> 
+      <ul class="unstyled pricing-table text-center">
+      <li class="headline">
+    <h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i].title, @jobs[i] %></h2>
+    </li>
+    <li class="price"><%= @jobs[i].description[0, 200] %>... </li>
+    <li class="info">Posted by: <%= User.find(@jobs[i].user_id).firstname %></li>
+    <li class="features first">Apply by: date <i class="icon-envelope"></i> <%= @jobs[i].contact%></li>    
+    </ul>      
+  </div>
+  <div class="span6">
+    <ul class="unstyled pricing-table active text-center">
+      <li class="headline">
+    <h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i+1].title, @jobs[i+1] %></h2>
+    </li>
+    <li class="price"><%= @jobs[i+1].description[0, 200] %>... </li>
+    <li class="info">Posted by: <%= User.find(@jobs[i+1].user_id).firstname %></li>
+    <li class="features first">Apply by: date <i class="icon-envelope"></i> <%= @jobs[i+1].contact%></li>    
+    </ul>      
 
-          <tbody>
-            <% @jobs.each do |job| %>
-              <tr>
-                <td><%= link_to job.title, job %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
 
-        <br>
+  </div>
+    <div class="span1">
+  </div>
+</div>
 
-        <% if current_user.employer == true %>
+<% i+=2 %>
+
+<% end %>
+
+
+
+ <% if current_user.employer == true %>
         <%= link_to 'Post a New Job', new_job_path %>
         <% end %>
+<hr>
 
-      </div>
+
+
+
+
+
+
+
+
+
+
+    
     </div>
   </div>
 </section>
