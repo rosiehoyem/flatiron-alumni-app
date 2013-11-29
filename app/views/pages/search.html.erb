@@ -1,8 +1,0 @@
-<h1>Search Students</h1>
-<br>
-<% form_tag pages_search_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :location => nil %>
-  </p>
-<% end %>
