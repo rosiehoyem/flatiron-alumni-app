@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128163636) do
+ActiveRecord::Schema.define(version: 20131129221840) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 20131128163636) do
     t.string   "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "deadline"
   end
 
   create_table "project_contributors", force: true do |t|
@@ -143,7 +144,7 @@ ActiveRecord::Schema.define(version: 20131128163636) do
     t.datetime "updated_at"
     t.string   "url"
     t.string   "client"
-    t.string   "photo"
+    t.string   "attachment"
   end
 
   create_table "replies", force: true do |t|

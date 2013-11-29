@@ -14,8 +14,9 @@
     <h3><%= @job.title %> </h3>
     <h3>Job posted by: <%= User.find(@job.user_id).name %></h3>
     <h3>Company:  <%= User.find(@job.user_id).company %></h3>
-    <br>
-    
+    <h3>Apply by: <%= l @job.deadline, format: :short %>
+    <br><br>
+
     <div class="jobdesc"> Description: <%= @job.description %><br>
     </div>
     <br>

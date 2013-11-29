@@ -10,7 +10,7 @@
 
 <% while i >= 0 %>
 <div class="row-fluid">
- 
+  
     <div class="span6"> 
       <ul class="unstyled pricing-table text-center">
       <li class="headline">
@@ -18,7 +18,7 @@
     </li>
     <li class="price"><%= @jobs[i].description[0, 150] %>... </li>
     <li class="info">Posted by: <%= User.find(@jobs[i].user_id).firstname %> At: <%= l @jobs[i].created_at, format: :short %></li>
-    <li class="features first">Apply by: date <i class="icon-envelope"></i> <%= @jobs[i].contact%></li> 
+    <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i].contact%></li> 
     <li class="features last">
      <%= link_to "Details", @jobs[i], class: "btn-main-small" %>
      </li>   
@@ -31,7 +31,7 @@
     </li>
     <li class="price"><%= @jobs[i-1].description[0, 150] %>... </li>
     <li class="info">Posted by: <%= User.find(@jobs[i-1].user_id).firstname %> At: <%= l @jobs[i-1].created_at, format: :short %></li></li>
-    <li class="features first">Apply by: date <i class="icon-envelope"></i> <%= @jobs[i-1].contact%></li> 
+    <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i-1].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i-1].contact%></li> 
      <li class="features last">
      <%= link_to "Details", @jobs[i-1], class: "btn-main-small" %>
      </li>    
