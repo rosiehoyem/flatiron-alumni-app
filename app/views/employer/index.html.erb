@@ -1,38 +1,191 @@
+<section id="content">
+    <div class="row-fluid">
+        <div class="span12">
+
+<h2>Browse Developer Profiles</h2>
+  
+<% i = @users.size %>
+<% i-= 1 %>
+
+
+<% while i >=0 %>
+
+
+<div class="row-fluid">
+<div class="span1">
+</div>
+
+<div class="span2">
+<%= image_tag(@users[i].profile_image, :style =>"width: 100%; height: 230px;") %>
+<div class="title-box text-center">
+<p>
+    <%= @users[i].name %> | 
+    <span class="dark-gray">
+    <em> <%= @users[i].current_employer[0..25] %>
+      <% if @users[i].current_employer.length > 25%>
+      ...
+      <% end %>  </em>
+    </span>
+</p>
+</div>
+      <ul class="team-social-icons text-center">
+          <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i].linkedin %> 
+          </li>
+          <li>
+          <%= link_to "BLOG" , @users[i].blog_url %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i].github %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i].twitter %>
+          </li>
+
+      </ul>
+
+<%= link_to 'Full Profile', user_path(@users[i]), class: "btn-main" %><br><br>
+</div>
+
+
+<div class="span2">
+<%= image_tag(@users[i-1].profile_image, :style =>"width: 100%; height: 230px;") %>
+<div class="title-box text-center">
+<p>
+    <%= @users[i-1].name %> | 
+    <span class="dark-gray">
+    <em> <%= @users[i-1].current_employer %></em>
+    </span>
+</p>
+</div>
+      <ul class="team-social-icons text-center">
+          <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-1].linkedin %> 
+          </li>
+          <li>
+          <%= link_to "BLOG", @users[i-1].blog_url %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-1].github %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-1].twitter %>
+          </li>
+
+      </ul>
+
+<%= link_to 'Full Profile', user_path(@users[i-1]), class: "btn-main" %>
+
+<br><br>
+</div>
 
 
 
-<h2>Browse Profiles</h2>
-    <% @users.each_with_index do |user, index| %>
-    
 
-              <% if  index.even? %>
-              
-                <div class="rgthcol">
-                <h3><%= user.name %></h3>
-                 <h3><%= user.current_employer %></h3>
-                  <p>Location: <%= user.location %></p>
-                  <h4>Info:</h4>
-                  <p><%= link_to "LinkedIn Profile", user.linkedin %></p>
-                  <p><%= link_to "Github Repositories", user.github %></p>
-                  <p><%= link_to user.blog_name, user.blog_url %></p>
-                  <p><%= link_to 'See Full Student Profile', user_path(user), class: "btn btn-md" %></p>
-                </div>
+<div class="span2">
+<%= image_tag(@users[i-2].profile_image, :style =>"width: 100%; height: 230px;") %>
+<div class="title-box text-center">
+<p>
+    <%= @users[i-2].name %> | 
+    <span class="dark-gray">
+    <em> <%= @users[i-2].current_employer %></em>
+    </span>
+</p>
+</div>
+      <ul class="team-social-icons text-center">
+          <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-2].linkedin %> 
+          </li>
+          <li>
+          <%= link_to "BLOG", @users[i-2].blog_url %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-2].github %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-2].twitter %>
+          </li>
 
-                <% else %>
-                <div class="lfthcol">
-                <h3><%= user.name %></h3>
-                 <h3><%= user.current_employer %></h3>
-                  <p>Location: <%= user.location %></p>
-                  <h4>Info:</h4>
-                  <p><%= link_to "LinkedIn Profile", user.linkedin %></p>
-                  <p><%= link_to "Github Repositories", user.github %></p>
-                  <p><%= link_to user.blog_name, user.blog_url %></p>
-                  <p><%= link_to 'See Full Student Profile', user_path(user), class: "btn btn-md" %></p>
-                </div>
-                <%end%>
+      </ul>
 
-    
+<%= link_to 'Full Profile', user_path(@users[i-2]), class: "btn-main" %>
 
-    <% end %>
+<br><br>
+</div>
 
+
+
+
+<div class="span2">
+<%= image_tag(@users[i-3].profile_image, :style =>"width: 100%; height: 230px;") %>
+<div class="title-box text-center">
+<p>
+    <%= @users[i-3].name %> | 
+    <span class="dark-gray">
+    <em> <%= @users[i-3].current_employer %></em>
+    </span>
+</p>
+</div>
+      <ul class="team-social-icons text-center">
+          <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-3].linkedin %> 
+          </li>
+          <li>
+          <%= link_to "BLOG", @users[i-3].blog_url %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-3].github %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-3].twitter %>
+          </li>
+
+      </ul>
+
+<%= link_to 'Full Profile', user_path(@users[i-3]), class: "btn-main" %>
+
+<br><br>
+</div>
+
+
+
+<div class="span2">
+<%= image_tag(@users[i-4].profile_image, :style =>"width: 100%; height: 230px;") %>
+<div class="title-box text-center">
+<p>
+    <%= @users[i-4].name %> | 
+    <span class="dark-gray">
+    <em> <%= @users[i-4].current_employer %></em>
+    </span>
+</p>
+</div>
+      <ul class="team-social-icons text-center">
+          <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-4].linkedin %> 
+          </li>
+          <li>
+          <%= link_to "BLOG", @users[i-4].blog_url %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-4].github %>
+          </li>
+          <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-4].twitter %>
+          </li>
+
+      </ul>
+
+<%= link_to 'Full Profile', user_path(@users[i-4]), class: "btn-main" %>
+
+<br><br>
+</div>
+<hr>
+
+
+</div><br><br>
+<% i = i - 5 %>
+
+<% end %>
+
+</section>
 

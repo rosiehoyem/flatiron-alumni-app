@@ -25,7 +25,7 @@
         <%= link_to image_tag("whitelogo.gif", alt: "Flatiron School", class: "brand"), root_path %>
         <div class="nav-collapse collapse">
           <ul class="nav pull-right">
-            <% if !current_user  || current_user.employer == false %>
+            <% if current_user  && current_user.employer == false %>
               <li class="menu-item">
                 <%= link_to "Dashboard", main_app.pages_dashboard_path %>
               </li>
@@ -47,30 +47,29 @@
               <li>
                 <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
               </li>
-              <% else %>
+              <% elsif current_user && current_user.employer == true %>
                <li class="menu-item">
                 <%= link_to "Dashboard", employer_path %>
-              </li>
-              <li class="menu-item">
-                <%= link_to "Browse Profiles", main_app.alumni_path %>
               </li>
                <li>
                   <%= link_to "Browse Projects", main_app.projects_path %>
               </li>
               <li class="menu-item">
-                <%= link_to "Post Job", new_job_path %>
+                <%= link_to "Post A Job", new_job_path %>
               </li>
               <% end %>
+
+
             <% if user_signed_in? %>
             <li> 
               <%= link_to "Logout", logitout_path %> 
             </li>
             <% else %>
             <li> 
-              <%= link_to "Login", main_app.new_user_session_path, class: "light-gray", class: "icon-user" %>
+              <%=  link_to raw("<i class=\"icon-user\"></i> Login"),main_app.new_user_session_path %>            
             </li>
             <li>
-              <%= link_to "Sign up", main_app.new_user_registration_path, class: "menu-button" %>
+              <%= link_to "Sign up", main_app.new_user_registration_path %>
             </li>
             <% end %>
           </ul>
@@ -106,7 +105,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
-    
+    <script>
       !function ($) {
         $(function(){
           $('#header').carousel()
