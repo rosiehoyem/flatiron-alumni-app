@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def dashboard
   	@projects = Project.last(3)
-    @students = User.where(role: 'alumnus').take(4)
+    @users = User.where(role: 'Alumnus').last(4)
   end
 
   def welcome
