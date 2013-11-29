@@ -1,6 +1,72 @@
-<h1>Editing forum</h1>
 
-<%= render 'form' %>
+
+<div class="row-fluid">
+  <div class="span1">
+  </div>
+  <div class="span3">
+  <h1>Editing forum</h1><br><br>
+</div>
+<div class="span 10">
+</div>
+</div> <!ends first row> 
+
+<div class="row-fluid">
+  <div class="span1">
+  </div>
+  <div class="span2">
+  <%= form_for(@forum) do |f| %>
+  <h4>Title: </h4>
+  </div>
+  <div class="span6">
+  <%= f.text_field :title, style: "width:550px;" %>
+</div>
+  <div class="span5">
+  </div>
+</div>
+
+
+<div class="row-fluid">
+  <div class="span1">
+  </div>
+  <div class="span2">
+
+  <h4>Content </h4>
+  </div>
+  <div class="span6">
+  <%= f.text_area :content, style: "width:550px; height:250px;" %>
+</div>
+  <div class="span5">
+     <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+</div>
+
+
+
+
+<div class="row-fluid">
+  <div class="span1">
+  </div>
+  <div class="span2">
+  </div>
+  <div class="span6">
+    
+  <%= f.submit "Update", class: "btn-dark-sm" %>  <%= link_to 'Back', forums_path, class: "btn-dark-sm" %>  
+</div>
+  <div class="span5">
+    
+  </div>
+</div>
+
+
+   
+  </div>
+<% end %>
+
+
+
+
+<br><br>
+
 
 <%= link_to 'Show', @forum %> |
 <%= link_to 'Back', forums_path %>
