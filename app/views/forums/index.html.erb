@@ -1,10 +1,18 @@
-<section id="content">
-  <div class="container">
-      
-    <div class="row-fluid">
-      <div class="span12">
-      <h2> Forums </h2>
 
+
+<div class="row-fluid text-center">
+  <h1> Forums </h1><br><br>
+</div> <!ends first row> 
+
+<div class="row-fluid">
+  <div class="span1">
+  </div> <! offset >
+    <div class="span3 boxed">
+    <h2><i class="icon-comments-alt"> </i> Ask A Question!</h2>
+    <p>The Forum is here for you to share or find information. Ask a question, start a debate, post a tip, or just say what's on your mind. </p>
+    </div><! ends 3 cols>
+<div class="span7">  
+  
       <table class="table table-striped">
         <thead>
           <tr>
@@ -31,9 +39,10 @@
 
       <br>
 
-      <%= link_to 'New Topic', new_forum_path %>
-
-      </div>
-    </div>
+      <%= link_to 'New Topic', new_forum_path, class: "btn-main-small" %>
+      <br><br>
+</div> <! ends 7 cols for table >
+  <div class="span1">
   </div>
-</section>
+</div> <br><br><br><! ends row>
+

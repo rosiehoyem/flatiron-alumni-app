@@ -1,22 +1,96 @@
-<h4> <%= @forum.title %></h4>
+<div class="row-fluid">
+  
+  <div class="span1">
+  </div> <! ---offset 1>
 
-<div class="content"><%= @forum.content %></div><br><br>
+  <div class="span3">
+     <h2> <%= @forum.title %></h2>
+  </div>
 
-<% if @replies.size > 0  %>
-<br> Replies:<br><br>
-<% @replies.each_with_index do |reply, index| %>
-  <div class="inl"><%= index+1 %>.</div><div class="rep"><%=  reply.content %><br>
-  Posted by: <%= reply.user.firstname %><br>
-</div><br>
-<% end %>
-<%end%>  
+  <div class="span8">
+  </div>
+</div> <! ends first row>
+
+
+
+<div class="row-fluid"> <! second row >
+  
+  <div class="span1">
+  </div> <! ---offset 1>
+
+  <div class="span4 maintopic">
+    <%= @forum.content %>
+  </div><br><br>
+
+  <div class="span9">
+  </div>
+</div>  <! ends second row>  
+
+
+
+
+<div class="row-fluid"> <! third row >
+ <% if @replies.size > 0  %>  
+  <div class="span1">
+  </div> <! ---offset 1>
+
+   <div class="span4">
+ 
+    <h2> <i class="icon-quote-left"></i>  Replies:</h2>
+ </div>
+
+  <div class="span9">
+  </div>
+</div>  <! ends third row>  
+
+  <% @replies.each_with_index do |reply, index| %>
+
+  <div class="row-fluid"> <! fourth row >
+    <div class="span1">
+   </div> <! ---offset 1>
+   <div class="span1">
+    <div class="replycount">
+      <h2><%= index+1 %></h2>
+    </div>
+  </div>
+
+    <div class="span5 reply">
+     <%=  reply.content %><br>
+      <i class="icon-comment-alt"></i> <%= reply.user.firstname %><br>
+    </div><br>
+   <div class="span7">
+   </div>
+ </div>  <! ends fourth row> 
+   <% end %>
+<% end %>  <! ends if block>
+
+  <br><br>
+ 
+
+<div class="row-fluid"> <! 5th row >
+  
+  <div class="span1">
+  </div> <! ---offset 1>
+
+   <div class="span4">
+    <%= link_to "Add New Comment", new_reply_path(:fid => @forum.id), :class=> "btn-dark-sm" %> 
+    
+    <% if current_user.id == @forum.user_id %>
+      <%= link_to 'Edit Topic', edit_forum_path(@forum), :class=> "btn-dark-sm" %> 
+    <% end %>
+    <%= link_to 'Back', forums_path, :class=> "btn-dark-sm" %>
+  </div>
+
+
+  <div class="span9">
+  </div>
+</div>  <! ends 5th row>  
+
+
 
 <br><br>
-<%= link_to "Add New Comment", new_reply_path(:fid => @forum.id), :class=> "btn btn-md" %> |
 
 
 
-<% if current_user.id == @forum.user_id %>
-          <%= link_to 'Edit Topic', edit_forum_path(@forum) %> |
-           <% end %>
-<%= link_to 'Back', forums_path %>
+
+
