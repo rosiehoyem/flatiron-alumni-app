@@ -23,7 +23,7 @@
  
 
   <%= link_to 'Back', jobs_path, class: "btn-main-small" %> <% if current_user.id == @job.user_id.to_i %>
-          <%= link_to 'Edit', edit_job_path(@job), class: "btn-main-small" %> |
+          <%= link_to 'Edit', edit_job_path(@job), class: "btn-main-small" %> 
         <%end%>
    </div>
   <div class="span4"><br><br>
