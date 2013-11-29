@@ -8,7 +8,9 @@
 
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 
-
+body {
+  padding-top: 50px !important;
+}
 
 .emps > tbody > tr:nth-child(odd) > td,
 .emps> tbody > tr:nth-child(odd) > th {
