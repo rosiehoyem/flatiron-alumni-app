@@ -67,18 +67,18 @@
          <% @project.project_contributors.each do |project_contributor| %>
         <div class="span3">
           <!-- <img src="img/team1.jpg" alt="Title"> -->
-          <%=image_tag("team1", alt: project_contributor.user.name) %>
+          <%=image_tag(project_contributor.user.profile_image, alt: project_contributor.user.name) %>
           <div class="title-box text-center">
             <p><%= project_contributor.user.name %></span></p>
-            <p><%= project_contributor.contribution  %></p>
           </div>
           
           <ul class="team-social-icons text-center">
-              <li><a class="twitter" href="http://www.twitter.com/themearmada" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
-              <li><a class="facebook" href="http://www.facebook.com" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
-              <li><a class="instagram" href="http://www.instagram.com" target="_blank"><i class="icon-camera-retro icon-large"></i></a></li>
-              <li><a class="linkedin" href="http://www.linkedin.com" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
-          </ul> 
+              <li><a class="twitter" href="<%= project_contributor.user.twitter %>" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
+              <li><a class="facebook" href="<%= project_contributor.user.github %>" target="_blank"><i class="icon-github icon-large"></i></a></li>
+              <li><a class="instagram" href="<%= project_contributor.user.blog_url %>.com" target="_blank"><i class="icon-rss icon-large"></i></a></li>
+              <li><a class="linkedin" href="<%= project_contributor.user.linkedin %>" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
+          </ul>  
+          <p><em>"<%= project_contributor.contribution  %>"</em></p>
         </div>
         <% end %>
       </div>
