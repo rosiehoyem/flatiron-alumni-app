@@ -1,0 +1,129 @@
+<section id="content">
+  <div class="container">
+    
+    <div class="row-fluid">
+      <h2> Edit <%= @user.firstname%>'s Details: </h2>
+    </div>
+    <%= form_for(@user) do |f| %>
+    <div class ="row-fluid">
+      <div class="span4">
+        <%= image_tag @user.profile_image %> 
+          <div class="field">
+            <%= f.label "Profile Pic" %>
+            <%= f.text_field :profile_image %>
+          </div>
+      </div>
+      <div class="span4">
+        
+
+    <!-- Begin form tabspace --> 
+
+      <!-- Form navigation / if we can fix it --> 
+        <!-- <ul id="myTab" class="nav nav-tabs">
+          <li>
+            <a href="#basic" data-toggle="tab"> Basic Info: </a>
+          </li>
+          <li>
+            <a href="#work" data-toggle="tab"> Work & Education: </a>
+          </li>
+          <li>
+            <a href="#social" data-toggle="tab"> Social </a> 
+          </li>
+          <li>
+            <a href="#image" data-toggle= "tab"> Picture </a>
+          </li>
+        </ul> -->
+      <!-- End form navigation --> 
+
+      <!-- Begin form fields --> 
+
+        <!-- basic info -->
+        <!-- nonworking js <div class="tab-pane" id="basic"> -->
+          
+          <div class="field">
+            <%= f.label "Name:" %>
+            <%= f.text_field :name %>
+          </div>
+           <div class="field">
+            <%= f.label :location %>
+            <%= f.text_field :location %>
+          </div>
+          <!-- for nonworking js 
+          <div class="field">
+            <%#= hidden_field :user_id, :value => @user.id %>
+          </div>
+          <div class="actions">
+            <%#= submit %>
+          </div>
+          <%# end %>
+        </div> -->
+        <!-- end basic info --> 
+
+        <!-- work & education --> 
+
+      <!-- for nonworking js  <div class="tab-pane" id="work">
+           <%#= form edit_user_path(@user) do %> -->
+          <div class="field"> 
+            <%= f.label :current_employer %>
+            <%= f.text_field :current_employer %>
+          </div>
+          <!-- for nonworking js <div class="field">
+            <%#= hidden_field :user_id, :value => @user.id %>
+          </div>
+          <div class="actions">
+            <%#= submit %>
+          </div>
+          <%# end %>  
+        </div> -->
+
+         <!-- end work & education -->
+
+         <!-- social links --> 
+         <!-- for nonworking js <div class="tab-pane" id="social">
+          
+           <%#= form edit_user_path(@user) do %> -->
+          <div class="field">
+            <%= f.label :linkedin %>
+            <%= f.text_field :linkedin %>
+          </div>
+          <div class="field">
+            <%= f.label :blog_name %>
+            <%= f.text_field :blog_name %>
+          </div>
+            <div class="field">
+            <%= f.label :blog_url %>
+            <%= f.text_field :blog_url %>
+          </div>
+          <!-- for nonworking js <div class="field">
+            <%#= hidden_field :user_id, :value => @user.id %>
+          </div>
+          <div class="actions">
+            <%#= submit %>
+          </div>
+          <%# end %>  
+        </div> -->
+        <!-- end social links --> 
+
+        <!-- profile image editor --> 
+        <!-- for nonworking js  <div class="tab-pane" id="image">
+          <%#= form edit_user_path(@user) do %> -->
+          </div>
+          <div class="span4">
+            <div class="field">
+            <%= f.hidden_field :user_id, :value => @user.id %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %> 
+          </div> 
+        </div>
+        <!-- end profile image editor --> 
+      </div> 
+      
+        
+      
+      </div>
+    </div>
+  </div>
+</section>
