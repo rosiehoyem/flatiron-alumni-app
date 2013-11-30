@@ -16,12 +16,11 @@ class UsersController < ApplicationController
 	end
 
 	def show
-    @user = User.find(params[:id])
+    
   end
 
 	def alumni
 		@users = User.all
-    @usersearch = User.search(params[:search])
 	end
 
 	def edit
@@ -50,6 +49,23 @@ class UsersController < ApplicationController
       redirect_to root
     end  
   end  
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
+  def simple_search
+
+  end
+
+  def name_search
+    @users = User.search(params[:search])
+  end
+  
 
  private
   # Use callbacks to share common setup or constraints between actions.
