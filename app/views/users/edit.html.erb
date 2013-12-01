@@ -7,7 +7,7 @@
     <%= form_for(@user) do |f| %>
     <div class ="row-fluid">
       <div class="span4">
-        <% if @user.attachment != "" %>
+        <% if !@user.attachment.blank? %>
         <%= image_tag @user.attachment_url(:thumb) %> 
         <% elsif %> 
         <%= image_tag @user.profile_image %> 
@@ -16,9 +16,8 @@
               <%= f.label :attachment, "Upload new photo" %> 
               <%= f.file_field :attachment %>     
           </div>  
-          <div class="field">
-            <%= link_to "Use Linkedin profile pic", :method => :remove_avatar %>
-          </div>
+        <%= f.submit %>
+        <%= link_to "Use Linkedin profile pic", reset_image_path, :confirm => "Resetting your picture will delete the existing image. Are you sure?" %>
       </div>
       <div class="span4">
         
@@ -46,7 +45,6 @@
 
         <!-- basic info -->
         <!-- nonworking js <div class="tab-pane" id="basic"> -->
-          
           <div class="field">
             <%= f.label "Name:" %>
             <%= f.text_field :name %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update]
+	before_action :set_user, only: [:show, :edit, :update, :image_reset]
 
 	def new
   	@user = User.new
@@ -63,6 +63,12 @@ class UsersController < ApplicationController
 
   def name_search
     @users = User.search(params[:search])
+  end
+
+  def image_reset
+    @user.remove_attachment!
+    @user.save
+    redirect_to edit_user_path
   end
   
 

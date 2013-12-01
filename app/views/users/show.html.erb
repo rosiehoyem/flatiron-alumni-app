@@ -13,7 +13,7 @@
             <div class="row-fluid blog-article">
               <div class="span7 offset1">
                 <h2><%= @user.name %></h2>
-								<% if @user.attachment != "" %>
+								<% if !@user.attachment.blank? %>
                 <%= image_tag @user.attachment_url(:thumb) %>
                 <% else %>  
                 <%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
