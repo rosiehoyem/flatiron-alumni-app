@@ -31,6 +31,8 @@ get 'users/sign_out'=> 'sessions#destroy', as: :logitout
 
   get "projects/:id/add_contributor" => "projects#add_contributor"
 
+  get "users/name_search" => "users#name_search"
+
   # resources :sessions
   
   root 'pages#welcome'

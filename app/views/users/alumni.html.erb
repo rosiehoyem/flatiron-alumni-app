@@ -4,14 +4,7 @@
     <div class="container">
 
       <div class="well well-sm">
-        <strong>Search Students by Name: </strong>
-        <%= form_tag users_path, :method => 'get' do %>
-        <p>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %>
-        </p>
-        <% end %>
-        <%= link_to "Advanced Search", new_search_path %>
+        <%= render 'simple_search' %>
       </div>
       
       <div class="row-fluid">

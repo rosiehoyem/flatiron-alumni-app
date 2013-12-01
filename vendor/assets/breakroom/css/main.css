@@ -13,6 +13,18 @@
    Global styles
    ========================================================================== */
 
+
+select {
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-size: 18px !important;
+   width: 160px;
+   border-radius: 5px !important;
+}   
+.jobimg {
+  margin-left: 35px;
+  border-radius: 4px;
+
+}
 .jobs {
     padding: 15px;
     color: #84CCD3 !important;
@@ -521,7 +533,7 @@ a.login {
   background: url(../img/paper-texture.jpg) repeat-x;
   height: 45px;
   opacity: 0.5;
-  margin-bottom: 60px;
+  /*margin-bottom: 60px;*/
 }
 
 
