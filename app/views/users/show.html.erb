@@ -18,10 +18,13 @@
                 <% else %>  
                 <%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
                 <% end %> 
+                <% if @user.id == current_user.id %> 
                 <h6> <%= link_to 'edit profile', edit_user_path(@user) %> </h6>
+                <% end %> 
                 <% if !@user.bio.blank? %> 
-                <%= @user.bio %> 
-                <% else %> 
+                <p><%= @user.bio %></p> <br />
+                <% else %>
+                <br><br> 
                 <p><%= @user.firstname %> hasn't provided us with additional details yet, but we can vouch for their love of Rails.</p><br />
                 <% end %> 
               </div>

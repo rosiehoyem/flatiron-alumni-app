@@ -31,7 +31,9 @@ get 'users/:id/edit/remove' => 'users#image_reset', as: :reset_image
   get'alumni'=>'users#alumni'
 
   get "projects/:id/add_contributor" => "projects#add_contributor"
-
+  get "projects/:id/edit/add_to_gallery" => "projects#add_project_pictures"
+  post "projects/:id/edit" => "projects#add_project_picture", :as => :project_pictures
+  get 'projects/:id/edit/remove' => 'projects#remove_image', as: :remove_image
   get "users/name_search" => "users#name_search"
 
   # resources :sessions
