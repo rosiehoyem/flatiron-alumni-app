@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201173632) do
+ActiveRecord::Schema.define(version: 20131201183551) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -204,6 +204,7 @@ ActiveRecord::Schema.define(version: 20131201173632) do
     t.string   "secret"
     t.string   "company"
     t.string   "attachment"
+    t.string   "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

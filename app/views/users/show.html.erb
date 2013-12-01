@@ -19,7 +19,11 @@
                 <%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
                 <% end %> 
                 <h6> <%= link_to 'edit profile', edit_user_path(@user) %> </h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br />
+                <% if !@user.bio.blank? %> 
+                <%= @user.bio %> 
+                <% else %> 
+                <p><%= @user.firstname %> hasn't provided us with additional details yet, but we can vouch for their love of Rails.</p><br />
+                <% end %> 
               </div>
 
               <!--Right Side Bar-->

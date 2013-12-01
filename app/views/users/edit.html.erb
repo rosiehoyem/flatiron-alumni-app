@@ -12,12 +12,14 @@
         <% elsif %> 
         <%= image_tag @user.profile_image %> 
         <% end %> 
+          <br>
+          <em><u><%= link_to "Restore to Linkedin picture", reset_image_path, :confirm => "Resetting your picture will delete the existing image. Are you sure?" %></em></u> <br><br>
           <div class="field">
-              <%= f.label :attachment, "Upload new photo" %> 
+              <label id="attachment"><h3> Upload a photo </h3></label>
               <%= f.file_field :attachment %>     
           </div>  
+          <br>
         <%= f.submit %>
-        <%= link_to "Use Linkedin profile pic", reset_image_path, :confirm => "Resetting your picture will delete the existing image. Are you sure?" %>
       </div>
       <div class="span4">
         
@@ -47,7 +49,7 @@
         <!-- nonworking js <div class="tab-pane" id="basic"> -->
           <div class="field">
             <%= f.label "Name:" %>
-            <%= f.text_field :name %>
+            <%= f.text_field :firstname %> <%= f.text_field :lastname %> 
           </div>
            <div class="field">
             <%= f.label :location %>
@@ -98,7 +100,8 @@
             <div class="field">
             <%= f.label :blog_url %>
             <%= f.text_field :blog_url %>
-          </div>
+          </div><br>
+          <%= f.submit %>
           <!-- for nonworking js <div class="field">
             <%#= hidden_field :user_id, :value => @user.id %>
           </div>
@@ -117,6 +120,10 @@
             <div class="field">
             <%= f.hidden_field :user_id, :value => @user.id %>
           </div>
+          <div class="field">
+            <%= f.label :bio, "Tell us about yourself:" %>  
+            <%= f.text_area :bio, :rows => 10 %> 
+          </div> <br>
           <div class="actions">
             <%= f.submit %>
           </div>
