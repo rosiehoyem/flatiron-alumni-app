@@ -1,4 +1,4 @@
-class EmployerController < ApplicationController
+git pullclass EmployerController < ApplicationController
 
   
   def index

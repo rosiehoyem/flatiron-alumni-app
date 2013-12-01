@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:linkedin]
 
+  mount_uploader :attachment, AttachmentUploader
 	has_many :students
   has_many :jobs
   has_many :forums

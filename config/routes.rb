@@ -2,6 +2,7 @@ FlatironAlumniApp::Application.routes.draw do
 
 get 'users/sign_out'=> 'sessions#destroy', as: :logitout
 
+post 'users/:id/edit' => 'users#update'
 
   get "searches/new"
   get "searches/create"

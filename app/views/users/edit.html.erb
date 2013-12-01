@@ -7,10 +7,17 @@
     <%= form_for(@user) do |f| %>
     <div class ="row-fluid">
       <div class="span4">
+        <% if @user.attachment != "" %>
+        <%= image_tag @user.attachment_url(:thumb) %> 
+        <% elsif %> 
         <%= image_tag @user.profile_image %> 
+        <% end %> 
           <div class="field">
-            <%= f.label "Profile Pic" %>
-            <%= f.text_field :profile_image %>
+              <%= f.label :attachment, "Upload new photo" %> 
+              <%= f.file_field :attachment %>     
+          </div>  
+          <div class="field">
+            <%= link_to "Use Linkedin profile pic", :method => :remove_avatar %>
           </div>
       </div>
       <div class="span4">

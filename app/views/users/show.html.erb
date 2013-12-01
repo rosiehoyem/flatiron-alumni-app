@@ -13,7 +13,11 @@
             <div class="row-fluid blog-article">
               <div class="span7 offset1">
                 <h2><%= @user.name %></h2>
-								<%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
+								<% if @user.attachment != "" %>
+                <%= image_tag @user.attachment_url(:thumb) %>
+                <% else %>  
+                <%= image_tag(@user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
+                <% end %> 
                 <h6> <%= link_to 'edit profile', edit_user_path(@user) %> </h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br />
               </div>
