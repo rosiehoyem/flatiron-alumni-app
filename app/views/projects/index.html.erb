@@ -16,7 +16,11 @@
         <% @projects.each do |project| %>
         <div class="span4 thumbs">
           <!-- <img src="img/portfolio1.jpg" alt="Image Size 430x280"> -->
+          <% if !project.attachment.blank? %> 
+          <%= image_tag project.attachment_url(:thumb) %> 
+          <% else %> 
           <%=image_tag("portfolio1.jpg", alt: "Image Size 430x280") %>
+          <% end %> 
             <span class="title">
               <span><%= link_to project.name, project %></span>
             </span> 

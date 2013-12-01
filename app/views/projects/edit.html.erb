@@ -13,26 +13,6 @@
 	      	<%= render 'gallery_form' %>
 	      </div>
 			  <div class="well well-sm">
-			    <div class="container">  
-			      <div class="row-fluid">
-			        <div class="span12">
-			          <p><strong>Add Your Contribution:</strong></p>
-			            <%= form_tag("/projects/#{@project.id}/add_contributor", method: "get") do %>
-			            <div class="add-contribution">
-			              <div class="field">
-			                <%= label_tag :contribution %>
-			                <%= text_area_tag :contribution %>
-			              </div>
-			            </div><br>
-			            <div class="actions">
-			              <%= submit_tag %>
-			            </div>
-			            <% end %>
-			          </p>
-			        </div>
-			      </div>
-			    </div>
-				</div> 
 				<div class="text-right">
 				<%= link_to 'Delete Project', @project, method: :delete, data: { confirm: 'Are you sure?' } %>  |
 					<%= link_to 'Show Project Page', @project %>

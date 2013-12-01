@@ -67,8 +67,13 @@ class ProjectsController < ApplicationController
   end
 
   def add_contributor
-    @project.project_contributors.build(:user_id =>current_user.id, :contribution =>params[:contribution]) 
-    @project.save
+    if !previous_contributor.blank? 
+      contributor = ProjectContributor.find(previous_contributor)
+      contributor.update(:contribution => params[:contribution])
+    else
+      @project.project_contributors.build(:user_id =>current_user.id, :contribution =>params[:contribution]) 
+      @project.save
+    end
     redirect_to project_path
   end
 
@@ -96,4 +101,13 @@ class ProjectsController < ApplicationController
     def photo_params
       params.require(:project_picture).permit(:attachment)
     end
+
+    def previous_contributor
+      @project.project_contributors.map do |contrib| 
+        if contrib.user_id == current_user.id
+          contrib  
+        end
+      end
+    end
+
 end
