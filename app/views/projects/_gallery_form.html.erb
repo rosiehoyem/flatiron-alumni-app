@@ -45,12 +45,9 @@
           <div class="boxy">
             <div class="field">
             
-              <% if !@project.attachment.blank? %>
+              
               <div class="span4"> 
-                <%= image_tag @project.attachment_url(:teensy) %>
-                <% else %> 
-                <p> No image! </p>
-                <% end %>  
+                <%= image_tag @project.attachment_url(:teensy) %>  
               </div>
               <div class="span8">
                 <%= f.label :attachment, "Project Cover image" %> 
