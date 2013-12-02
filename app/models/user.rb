@@ -8,13 +8,13 @@ class User < ActiveRecord::Base
 	has_many :students
   has_many :jobs
   has_many :forums
-  has_many :replies
-  # validates :email, presence: true, uniqueness: true
-  # validates :password_confirmation, presence: true
-
-  
+  has_many :replies  
   has_many :project_contributors
   has_many :projects, through: :project_contributors      
+
+  # validates :firstname, presence: true
+  # validates :lastname, presence: true
+  # validates :password_confirmation, presence: true
 
 
   def self.from_omniauth(auth)

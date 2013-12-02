@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :project do
-    name "MyString"
-    description "MyString"
+    name "Project Name"
+    description "Project Description"
   end
 end

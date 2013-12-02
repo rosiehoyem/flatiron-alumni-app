@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :project_contributor do
-    user nil
-    project nil
-    contribution "MyString"
+    user_id "1"
+    project_id "1"
+    contribution "Project Contribution"
   end
 end
