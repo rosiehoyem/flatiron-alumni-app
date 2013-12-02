@@ -1,4 +1,4 @@
-require 'spec_helper'
+user_spec.rbrequire 'spec_helper'
 
 feature 'User management' do
 	scenario "sign up alumnus user" do
