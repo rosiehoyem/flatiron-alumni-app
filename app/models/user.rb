@@ -12,9 +12,11 @@ class User < ActiveRecord::Base
   has_many :project_contributors
   has_many :projects, through: :project_contributors      
 
-  # validates :firstname, presence: true
-  # validates :lastname, presence: true
+  validates :firstname, presence: true
+  validates :lastname, presence: true
   # validates :password_confirmation, presence: true
+
+  before_save :name
 
 
   def self.from_omniauth(auth)
@@ -127,9 +129,9 @@ class User < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+      where('name LIKE ?', "%#{search}%")
     else
-      find(:all)
+      self.all
     end
   end
 

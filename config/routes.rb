@@ -2,7 +2,7 @@ FlatironAlumniApp::Application.routes.draw do
 
 get 'users/sign_out'=> 'sessions#destroy', as: :logitout
 
-
+  get "users/name_search" => "users#name_search"
   get "searches/new"
   get "searches/create"
   get "searches/show"
@@ -31,7 +31,7 @@ get 'users/sign_out'=> 'sessions#destroy', as: :logitout
 
   get "projects/:id/add_contributor" => "projects#add_contributor"
 
-  get "users/name_search" => "users#name_search"
+  
 
   # resources :sessions
   
