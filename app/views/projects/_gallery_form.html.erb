@@ -13,27 +13,24 @@
     <% end %>
       <div class="row-fluid">
         
-        <div class="span5">
+        <div class="span6">
           <h3> Basic Info: </h3>
           <div class="control-group">  
             <div class="controls">  
               <!-- <input type="text" class="input-block-level" name="contact_name" id="input1" placeholder="Your name">  -->
-              <%= f.label :name %>
-              <%= f.text_field :name, placeholder: "Project Name", class: "input-block-level" %> 
+              <%= f.text_field :name, class: "input-block-level" %> 
             </div>  
           </div>  
           <div class="control-group">  
             <div class="controls">  
               <!-- <input type="text" class="input-block-level" name="contact_email" id="input2" placeholder="Client"> --> 
-              <%= f.label :client %>
-              <%= f.text_field :client, placeholder: "Client", class: "input-block-level" %> 
+              <%= f.text_field :client, class: "input-block-level" %> 
             </div>  
           </div>
           <div class="control-group">  
             <div class="controls">  
               <!-- <input type="text" class="input-block-level" name="contact_subject" id="input3" placeholder="URL (if deployed)"> --> 
-              <%= f.label :url %>
-              <%= f.text_field :url, placeholder: "Project URL", class: "input-block-level" %> 
+              <%= f.text_field :url, class: "input-block-level" %> 
             </div>  
           </div>
           <div class="control-group">  
@@ -42,15 +39,10 @@
                 <%= f.text_area :description, class: "input-block-level", rows: "5", placeholder: "Project Description" %> 
               </div>
           </div>
-          <div class="boxy">
-            <div class="field">
-            
-              <% if !@project.attachment.blank? %>
+          <div class="control-group">
+            <div class="controls">
               <div class="span4"> 
-                <%= image_tag @project.attachment_url(:teensy) %>
-                <% else %> 
-                <p> No image! </p>
-                <% end %>  
+                <%= image_tag @project.attachment_url(:teensy) %>  
               </div>
               <div class="span8">
                 <%= f.label :attachment, "Project Cover image" %> 
@@ -62,33 +54,33 @@
           <div class="text-left">  
             <%= f.submit 'Update Project' %>
           </div>
-          <% end %>   
+    <% end %>   
         </div>
 
-        <div class="span3">
+        <div class="span6">
           <h3> Gallery Photos </h3>
           <% if @project.project_pictures.count > 0 %>  
-          <% @project.project_pictures.each do |p| %> 
-          <%= image_tag p.attachment_url(:teensy) %> <%= link_to "Remove", remove_image_path(@project, p) %> </br>  
-          <% end %> 
+          <table>
+            <tr>
+            <% @project.project_pictures.each do |p| %>
+            <td><%= image_tag p.attachment_url(:teensy) %> <br> <%= link_to "delete", remove_image_path(@project, p) %> </td>
+            <% end %> 
+          </tr>
+          </table>
           <% else %> 
           <p> Upload screenshots of your project for the slideshow </p>
           <% end %> 
           <%= form_for(@project_picture) do |f| %> 
-          <%= f.label :attachment, "Add a photo" %> 
           <%= f.file_field :attachment %> 
-          <%= f.submit %> 
+          <div class="text-left">
+          <%= f.submit "Add new photo" %> 
+          </div>
           <% end %> 
-
-        </div>
-
-        <div class="span4"> 
           <h3> Add Your Contribution: </h3>
           <%= form_tag("/projects/#{@project.id}/add_contributor", method: "get") do %>
           <div class="add-contribution">
             <div class="field">
-              <%= label_tag :contribution %>
-              <%= text_area_tag :contribution %>
+              <%= text_area_tag :contribution, "", class: "input-block-level", :rows => 5, :cols => 100 %>
             </div>
           </div><br>
           <div class="actions">

@@ -18,14 +18,18 @@
             <% else %> 
               <%= image_tag("pic2.jpg") %> 
             <% end %> 
-          <% elsif @project.project_pictures.size > 1 %>
+          <% elsif @project.project_pictures.size > 0 %>
           <div id="work" class="carousel slide">
             <div class="carousel-inner">
               
               <!--Item One--> 
                
               <div class="item active">
-                <%= image_tag @project.project_pictures.last.attachment_url(:full_size) %>
+                <% if !@project.attachment.blank? %> 
+                  <%= image_tag @project.attachment_url(:full_size) %>
+                <% else %> 
+                  <%= image_tag("pic2.jpg") %> 
+                <% end %> 
               </div>
 
               <% @project.project_pictures.each do |picture| %>
@@ -61,7 +65,9 @@
           <br />
           <a class="btn-main-small" href="<%= @project.url %>"><i class="icon-chevron-right"></i> Visit Project</a>
           <br><br>
+          <% if current_user.employer != true %>
           <small><%= link_to 'Edit Details of Project', edit_project_path(@project) %></small>
+          <% end %> 
         </div>
       </div>
             
