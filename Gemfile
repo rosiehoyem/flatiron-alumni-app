@@ -77,4 +77,5 @@ group :test, :development do
   gem "guard-rspec"
   gem "faker"
   gem "pry"
+  gem "launchy", "~> 2.3.0"
 end

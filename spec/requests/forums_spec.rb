@@ -2,10 +2,21 @@ require 'spec_helper'
 
 describe "Forums" do
   describe "GET /forums" do
-    it "works! (now write some real specs)" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      get forums_path
-      response.status.should be(200)
+    it "displays forums" do
+      Forum.create!(:title => "Forum Title", :content => "Forum content.")
+      visit forums_path
+      page.should have_content("Forum Title")
+    end
+  
+  describe "POST /forums" do
+    it "creates forum" do
+      visit forums_path
+      fill_in "Title", :with => "Forum Title"
+      fill_in "Content", :with => "Forum content."
+      click_button "Post New Topic"
+      # save_and_open_page
+      page.should have_content("Forum Title")
+      page.should have_content("Forum content.")
     end
   end
 end
