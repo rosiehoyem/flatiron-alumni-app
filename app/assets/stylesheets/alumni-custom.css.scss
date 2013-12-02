@@ -825,3 +825,20 @@ object#bigify {
     width: 100%;
     height: 100%;
 }
+
+/* == [well styles] ============================= */ 
+.boxy {
+  min-height: 40px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.wellform-sm {
+  padding: 20px;
+  border-radius: 3px;
+}

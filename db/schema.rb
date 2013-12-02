@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129221840) do
+ActiveRecord::Schema.define(version: 20131201191912) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -137,6 +137,13 @@ ActiveRecord::Schema.define(version: 20131129221840) do
   add_index "project_contributors", ["project_id"], name: "index_project_contributors_on_project_id"
   add_index "project_contributors", ["user_id"], name: "index_project_contributors_on_user_id"
 
+  create_table "project_pictures", force: true do |t|
+    t.integer  "project_id"
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", force: true do |t|
     t.string   "name"
     t.string   "description"
@@ -203,6 +210,8 @@ ActiveRecord::Schema.define(version: 20131129221840) do
     t.string   "token"
     t.string   "secret"
     t.string   "company"
+    t.string   "attachment"
+    t.string   "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

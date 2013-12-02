@@ -39,6 +39,10 @@ class ProjectPhotoUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [430, 280]
   end
 
+  version :teensy do 
+    process :resize_to_fill => [50, 50]
+  end
+
   # Create different versions of your uploaded files:
   # version :thumb do
   #   process :scale => [50, 50]

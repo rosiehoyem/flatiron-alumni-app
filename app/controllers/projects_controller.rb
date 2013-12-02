@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_contributor]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :add_contributor, :add_project_picture]
 
   # GET /projects
   # GET /projects.json
@@ -20,6 +20,20 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @project_picture = ProjectPicture.new
+  end
+
+  def add_project_picture
+    @project_picture = @project.project_pictures.build(photo_params)
+    @project_picture.save!
+    redirect_to edit_project_path(@project)
+  end
+
+  def remove_image
+    @project = Project.find(params[:id]) 
+    @project_picture = ProjectPicture.find_by(:id => params[:format])
+    @project_picture.destroy!
+    redirect_to edit_project_path(@project)
   end
 
   # POST /projects
@@ -53,8 +67,13 @@ class ProjectsController < ApplicationController
   end
 
   def add_contributor
-    @project.project_contributors.build(:user_id =>current_user.id, :contribution =>params[:contribution]) 
-    @project.save
+    if !previous_contributor.blank? 
+      contributor = ProjectContributor.find(previous_contributor)
+      contributor.update(:contribution => params[:contribution])
+    else
+      @project.project_contributors.build(:user_id =>current_user.id, :contribution =>params[:contribution]) 
+      @project.save
+    end
     redirect_to project_path
   end
 
@@ -78,4 +97,17 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:name, :description, :url, :client, :attachment)
     end
+
+    def photo_params
+      params.require(:project_picture).permit(:attachment)
+    end
+
+    def previous_contributor
+      @project.project_contributors.map do |contrib| 
+        if contrib.user_id == current_user.id
+          contrib  
+        end
+      end
+    end
+
 end
