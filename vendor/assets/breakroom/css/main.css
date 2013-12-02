@@ -208,7 +208,7 @@ a:hover {
 iframe {
     background-color: transparent;
     border: medium none;
-    height: inherit;
+    /*height: inherit;*/
     overflow: hidden;
     width: 100%;
 }

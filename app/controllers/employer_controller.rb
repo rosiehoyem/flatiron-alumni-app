@@ -1,4 +1,4 @@
-git pullclass EmployerController < ApplicationController
+class EmployerController < ApplicationController
 
   
   def index
@@ -15,12 +15,10 @@ git pullclass EmployerController < ApplicationController
     redirect_to employer_path
   end  
 
-end
-
-
-  
 private
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation, :firstname, :lastname, :company)
   end
+
+end

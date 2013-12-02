@@ -19,7 +19,7 @@ You Don't have permission to Post a Job:(
   <div class="span1">
   </div>
   <div class="span2">
- <h2> Enter Job Tilte:</h2>    
+ <h2> Enter Job Title:</h2>    
   </div>
   <div class="span6">
     <%= f.text_field :title, style: "width:550px;" %>
@@ -65,7 +65,7 @@ You Don't have permission to Post a Job:(
   <div class="span1">
   </div>
   <div class="span2">
-  <h5>Contact Email / Phone Number:</h5>    
+  <h5>Contact Email:</h5>    
   </div>
   <div class="span6"> <%= f.text_field :contact, value: current_user.email, style: "width:550px;" %><br>
   <br> <%= f.submit "submit", class: "btn-dark-sm"  %> <%= link_to 'Back', jobs_path, class: "btn-dark-sm"  %>
@@ -85,18 +85,7 @@ You Don't have permission to Post a Job:(
 <% end %>
 
 
-<section id="brec">
-  <div class="image-break"> </div>
-</section>
-<section id="message">
-<div class="container">
-<div class="row-fluid">
-<div class="span12 text-center">
-<h2>Never doubt that a small group of thoughtful, committed people can change the world.  Indeed, it is the only thing that ever has.  ~ Margaret Meade</h2>
-</div>
-</div>
-</div>
-</section>
+<%= render 'shared/quote_well' %>
 
 </div>
 </div>
