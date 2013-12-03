@@ -1,9 +1,22 @@
 
  <section id="content">
     <div class="row-fluid">
-        <div class="span12">
+        
 
-<h1>Create new a new job posting</h1>
+  <div class="span1">
+  </div>
+  <div class="span6">
+<h1>Post a new job opening</h1>
+    </div><br>
+  <div class="span2">    
+  </div>
+  
+
+  <div class="span3">
+
+ </div> 
+ </div>  
+
 <br><br>
 
 <% if !current_user || current_user.employer == false %>
@@ -16,28 +29,27 @@ You Don't have permission to Post a Job:(
 <%= form_for(@job) do |f| %>
 
 <div class="row-fluid">
+  
   <div class="span1">
   </div>
-  <div class="span2">
- <h2> Enter Job Tilte:</h2>    
-  </div>
   <div class="span6">
-    <%= f.text_field :title, style: "width:550px;" %>
-</div>
-  <div class="span3">
+    <%= f.text_field :title, style: "width:550px;", :placeholder => "Job title" %>
+ </div><br>
+  <div class="span5"> 
 
  </div> 
  </div>  
-
+<%= image_tag("lapt.png", :class => "padded") %>
  <div class="row-fluid">
   <div class="span1">
   </div>
-  <div class="span2">
-   <h3>Enter Description:</h3>    
-  </div>
   <div class="span4">
-    <%= f.text_area :description, style: "width:550px; height:250px;" %><br>
+    <%= f.text_area :description, style: "width:550px; height:250px;", :placeholder => "Description" %><br>
 </div>
+  <div class="span2">
+     
+  </div>
+  
   <div class="span4">
        
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -47,13 +59,16 @@ You Don't have permission to Post a Job:(
   <div class="row-fluid">
   <div class="span1">
   </div>
-  <div class="span2">
-   <h3>Application Deadline:</h3>
 
-  </div>
   <div class="span4 select">
-    <%= f.date_select :deadline %><br>
+    <h3>Application Deadline:</h3>
+    <%= f.date_select :deadline %><br><br>
 </div>
+  <div class="span2">
+   
+
+  </div>
+  
   <div class="span4">
        
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -64,20 +79,21 @@ You Don't have permission to Post a Job:(
   <div class="row-fluid">
   <div class="span1">
   </div>
-  <div class="span2">
-  <h5>Contact Email / Phone Number:</h5>    
-  </div>
-  <div class="span6"> <%= f.text_field :contact, value: current_user.email, style: "width:550px;" %><br>
+  <div class="span4 center"><h3>Contact Email / Phone Number:</h3>  <%= f.text_field :contact, value: current_user.email, style: "width:550px;" %><br>
   <br> <%= f.submit "submit", class: "btn-dark-sm"  %> <%= link_to 'Back', jobs_path, class: "btn-dark-sm"  %>
 </div>
-  <div class="span3">
+  <div class="span2">
+   
+  </div>
+  
+  <div class="span4">
        
 
  </div> 
  </div>    
 
      
-  </div>
+ 
 </div>
 
     <% end %>

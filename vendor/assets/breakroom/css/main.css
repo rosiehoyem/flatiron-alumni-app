@@ -13,12 +13,42 @@
    Global styles
    ========================================================================== */
 
+.padded {
+  position:absolute;
+  right: 350px;
+  top:220px;
+
+}
+
+@media (max-width: 1455px) {
+
+.padded
+{
+  display: none;
+}
+}
+
+
+.center{
+  text-align: center; 
+}
+
+.select {
+  text-align: center; 
+   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+   font-size: 16px !important;
+   width: 140px;
+   border-radius: 5px !important;
+  
+}  
+
 
 select {
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
-  font-size: 18px !important;
-   width: 160px;
+   font-size: 18px !important;
+   width: 140px;
    border-radius: 5px !important;
+   margin-left: 20px;
 }   
 .jobimg {
   margin-left: 35px;
