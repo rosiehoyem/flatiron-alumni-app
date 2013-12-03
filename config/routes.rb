@@ -1,42 +1,37 @@
 FlatironAlumniApp::Application.routes.draw do
 
-get 'users/sign_out'=> 'sessions#destroy', as: :logitout
-
-post 'users/:id/edit' => 'users#update'
-get 'users/:id/edit/remove' => 'users#image_reset', as: :reset_image
+  get "users/name_search" => "users#name_search"
+  get 'users/sign_out'=> 'sessions#destroy', as: :logitout
+  post 'users/:id/edit' => 'users#update'
+  get 'users/:id/edit/remove' => 'users#image_reset', as: :reset_image
+  get'alumni'=>'users#alumni'
+  
   get "searches/new"
   get "searches/create"
   get "searches/show"
   
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} do
-
-    get 'users/sign_out'=>'devise/sessions#destroy'
-
-  end
-
-
-
-  resources :users, :searches
-
-  resources :forums
-  resources :replies
-  resources :jobs
-
-  resources :projects
-
   get "pages/dashboard"
   get "pages/search"
   get "pages/calendar"
-
-  get'alumni'=>'users#alumni'
+  
+  get '/employer_dash' => 'employer#index', as: :employer
+  get '/employer/:id/edit' => 'employer#edit', as: :edit_employer_profile
+  patch '/employer/:id/edit' => 'employer#updy', as: :updy_emp
 
   get "projects/:id/add_contributor" => "projects#add_contributor"
   get "projects/:id/edit/add_to_gallery" => "projects#add_project_pictures"
   post "projects/:id/edit" => "projects#add_project_picture", :as => :project_pictures
   get 'projects/:id/edit/remove' => 'projects#remove_image', as: :remove_image
-  get "users/name_search" => "users#name_search"
 
-  # resources :sessions
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => "registrations"} do
+    get 'users/sign_out'=>'devise/sessions#destroy'
+  end
+
+  resources :users, :searches
+  resources :forums
+  resources :replies
+  resources :jobs
+  resources :projects
   
   root 'pages#welcome'
 
@@ -45,10 +40,6 @@ get 'users/:id/edit/remove' => 'users#image_reset', as: :reset_image
 
   # You can have the root of your site routed with "root"
 
-  get '/employer_dash' => 'employer#index', as: :employer
-
-  get '/employer/:id/edit' => 'employer#edit', as: :edit_employer_profile
-  patch '/employer/:id/edit' => 'employer#updy', as: :updy_emp
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

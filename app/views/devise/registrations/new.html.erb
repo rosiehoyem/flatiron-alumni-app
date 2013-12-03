@@ -16,7 +16,8 @@
           <div class="controls">
               <div class="input-prepend">
                <span class="add-on"><i class="icon-user"></i></span>
-              <input type="text" class="input-xlarge" id="firstname" name="firstname" placeholder="First Name">
+              <!-- <input type="text" class="input-xlarge" id="firstname" name="firstname" placeholder="First Name"> -->
+              <%= f.text_field :firstname, :autofocus => true, class: "input-xlarge", placeholder: "First Name" %>
             </div>
           </div>
         </div>
@@ -25,7 +26,8 @@
           <div class="controls">
               <div class="input-prepend">
             <span class="add-on"><i class="icon-user"></i></span>
-              <input type="text" class="input-xlarge" id="lastname" name="lastname" placeholder="Last Name">
+              <!-- <input type="text" class="input-xlarge" id="lastname" name="lastname" placeholder="Last Name"> -->
+              <%= f.text_field :lastname, class: "input-xlarge", placeholder: "Last Name" %>
             </div>
           </div>
         </div>
@@ -35,7 +37,7 @@
               <div class="input-prepend">
             <span class="add-on"><i class="icon-envelope"></i></span>
               <!-- <input type="text" class="input-xlarge" id="email" name="email" placeholder="Email"> -->
-              <%= f.email_field :email, :autofocus => true, class: "input-xlarge", placeholder: "Email" %>
+              <%= f.email_field :email, class: "input-xlarge", placeholder: "Email" %>
             </div>
           </div>
         </div>

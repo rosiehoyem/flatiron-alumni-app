@@ -3,7 +3,14 @@
 FactoryGirl.define do
   factory :user do
     email { Faker::Internet.email}
-    password "MyString"
-    password_confirmation "MyString"
+    password "password"
+    password_confirmation "password"
+    firstname { Faker::Name.first_name}
+    lastname { Faker::Name.last_name}
+    location { Faker::Address.city}
+    linkedin "linkedin"
+    twitter "twitter"
+    github "github"
+    cohort "cohort"
   end
 end

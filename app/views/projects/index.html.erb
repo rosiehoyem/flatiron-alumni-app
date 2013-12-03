@@ -7,8 +7,9 @@
           <h2>Flatiron Projects</h2>
         </div>
       </div>
-
+      <% if current_user.employer != true %> 
       <%= link_to 'Create a New Project', new_project_path %>
+      <% end %> 
       
       <div class="row-fluid text-center">
             
