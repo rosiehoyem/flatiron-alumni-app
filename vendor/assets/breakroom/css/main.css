@@ -13,6 +13,14 @@
    Global styles
    ========================================================================== */
 
+.bottompad {
+  height: 400px;
+}
+
+.edit {
+ padding-left: 10px;
+
+}
 .padded {
   position:absolute;
   right: 350px;

@@ -60,9 +60,14 @@
 
     <div class="span5 reply">
      <%=  reply.content %><br>
-      <i class="icon-comment-alt"></i> <%= reply.user.firstname %><br>
-    </div><br>
+
+      <i class="icon-comment-alt"></i> <%= reply.user.firstname %> <% if current_user.id == reply.user.id %>
+    <%= link_to '<i class="icon-edit edit"></i>'.html_safe,  edit_reply_path(reply.id) %>
+    <% end %><br>
+    </div>
+     <br>
    <div class="span7">
+
    </div>
  </div>  <! ends fourth row> 
    <% end %>

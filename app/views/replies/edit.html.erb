@@ -1,0 +1,19 @@
+ <section id="content">
+    <div class="row-fluid">
+        <div class="span12">
+
+<h3> Edit your Comment </h3>
+<%= form_for @reply do |f|%>
+<%= f.text_field :content, :value =>@reply.content %>
+<%= f.submit "Update", class: "btn-dark-sm" %>
+
+<% end %>
+
+<div class="bottompad">
+</div>
+
+
+
+</div>
+</div>
+</span>

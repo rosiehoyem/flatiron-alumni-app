@@ -10,7 +10,8 @@ class ForumsController < ApplicationController
   # GET /forums/1
   # GET /forums/1.json
   def show
-    @replies = Reply.where(:forum_id => @forum.id)
+    reps = Reply.where(:forum_id => @forum.id)
+    @replies= reps.order("id DESC")
   end
 
   # GET /forums/new
