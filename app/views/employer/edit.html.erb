@@ -9,23 +9,18 @@
   <script>
 function validateForm()
 {
-var x=document.forms["emp_prof"]["user[firstname]"].value;
-if (x==null || x=="")
-  {
-  alert("First name must be filled out");
-  return false;
-  }
-var y=document.forms["emp_prof"]["user[lastname]"].value;
+
+var y=document.forms["emp_prof"]["user[company]"].value;
 if (y==null || y=="")
   {
-  alert("Last name must be filled out");
+  alert("Company name must be filled out");
   return false;
   }
 }
 </script>
 </head>
-
-<h3> New Employer Profile </h3>
+<br><br>
+<h2> Please add a company name to your profile </h2>
 
 <table class="newemp">
   
@@ -33,17 +28,28 @@ if (y==null || y=="")
 
 
 <%= form_for @emp, :url => updy_emp_path, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
-  <tr><td class="emp">First Name:</td><td> <%= f.text_field :firstname %></td></tr>
- <tr><td class="emp"> Last Name: </td><td><%= f.text_field :lastname %></td></tr>
- <tr><td class="emp"> Company: </td><td><%= f.text_field :company %></td></tr>
- <tr><td class="emp"> Email: </td><td><%= f.text_field :email %></td></tr>
-  
+ <tr><td class="emp"> </td><td><%= f.text_field :company, :placeholder => "Company Name" %></td><td> <%=f.submit 'Add', :class => "btn-dark-sm" %></td></tr> 
   <%= f.hidden_field :id, :value => @emp.id %>
- <tr><td> <%=f.submit 'Update Profile' %></td><td></td></tr>
+
  </tbody>
 </table>
 
 <% end %>
+
+<br><br><br><br><br>
+<section id="brec">
+  <div class="image-break"> </div>
+</section>
+<section id="message">
+<div class="container">
+<div class="row-fluid">
+<div class="span12 text-center">
+<h2>Far and away the best prize that life has to offer is the chance to work hard at work worth doing.<br> ~Theodore Roosevelt 
+</h2>
+</div>
+</div>
+</div>
+</section>
 
 
 </div>
