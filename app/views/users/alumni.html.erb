@@ -1,67 +1,17 @@
 
 <!--Content Section One-->
   <section id="blog">
+      
+      <div class="row-fluid">
     <div class="container">
 
       <div class="well well-sm">
         <%= render 'simple_search' %>
       </div>
-      
-      <div class="row-fluid">
-          
-        <!--Blog Article Container-->
-        <div class="span12 article-container">
-          
-          <% @users.each do |user| %>
-          <!--Alumnus Summary -->
-          <div class="well well-sm">
-            <div class="row-fluid blog-article">
-              <div class="span7 offset1">
-                <h2><%= user.name %></h2>
-                <% if !user.attachment.blank? %> 
-                <%= image_tag(user.attachment_url(:thumb)) %>
-                <% else %> 
-                <%= image_tag(user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
-                <% end %> 
-                <% if !user.bio.blank? %> 
-                <p><%= user.bio %><p> <br /> 
-                <% else %> 
-                <p><%= user.firstname %> hasn't provided us with additional details yet, but we can vouch for their love of Rails.</p><br />
-                <% end %> 
-                <p><%= link_to 'See Full Student Profile', user_path(user), class: "more" %></p>
-              </div>
-
-              <!--Right Side Bar-->
-              <div class="span3 sidebar-container">
-                <h3><%= user.current_employer %></h3>
-                <p>Location: <%= user.location %></p>
-                
-                <h3>Links</h3>
-                <ul class="unstyled blog-links">
-                  <li><%= link_to "LinkedIn Profile", user.linkedin %></li>
-                  <li><%= link_to "Github Repositories", user.github %></li>
-                  <li><%= link_to "Twitter", user.twitter %></li>
-                  <li><%= link_to user.blog_name, user.blog_url %></li>
-                </ul>
-              </div><!--End Single Alumnus Container-->
-            </div>
-            
-          </div><!--End Span-->
-          <% end %>
-        </div>
-        
-        <div class="pagination">
-          <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-          </ul>
-        </div>
-
-      </div>
     </div>
+    <br>      
+
+       <%= render 'users/alumni' %>
   </section>
 
 

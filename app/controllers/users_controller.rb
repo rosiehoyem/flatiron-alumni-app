@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
 	def alumni
-		@users = User.all
+		@users = User.where(:employer => false)
 	end
 
 	def edit
