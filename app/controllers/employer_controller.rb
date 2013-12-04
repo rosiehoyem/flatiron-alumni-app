@@ -9,10 +9,22 @@ class EmployerController < ApplicationController
     @emp = User.find(params[:id])
   end
 
-  def updy
-    emp = User.find(params[:id])
-    emp.update(user_params)
-    redirect_to employer_path
+  def show
+    @emp = User.find(params[:id])
+  end
+
+  def update
+    @emp = User.find(params[:id])
+
+    respond_to do |format|
+      if @emp.update(user_params)
+        format.html { redirect_to show_employer_profile_path(@emp), notice: 'Employer was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @emp.errors, status: :unprocessable_entity }
+      end
+    end
   end  
 
 

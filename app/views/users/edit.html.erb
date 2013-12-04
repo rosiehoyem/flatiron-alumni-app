@@ -4,6 +4,9 @@
     <div class="row-fluid">
       <h2> Edit <%= @user.firstname%>'s Details: </h2>
     </div>
+    
+    <%= button_to "Pull Information from LinkedIn", { action: "edit" }, class: "btn" %>
+    
     <%= form_for(@user) do |f| %>
     <div class ="row-fluid">
       <div class="span4">

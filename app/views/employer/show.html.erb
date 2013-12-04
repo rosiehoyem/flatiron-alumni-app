@@ -1,0 +1,45 @@
+
+<!--Content Section One-->
+  <section id="blog">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span10 offset1">
+          <h2><%= @emp.company %></h2>
+          <h4>Contact Name:</h4>
+          <%= @emp.name %>
+
+          <h4>Email:</h4>
+          <%= @emp.email %>
+        
+          <% if @emp.id == current_user.id %> 
+          <h6> <%= link_to 'edit profile', edit_user_path(@emp) %> </h6>
+          <% end %> 
+        </div>
+        <br>
+        <div class="row-fluid blog-article">
+          <div class="span10 offset1">
+          	<h3>Employer Job Posts</h3>
+						<table class="table table-striped">
+						  <thead>
+						    <tr>
+						      <th>Post Title</th>
+						      <th>Deadline</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						  	<% @emp.jobs.each do |job| %>
+						    <tr>
+						      <td><strong><%= link_to job.title, job_path(job) %></strong></td>
+						      <td><%= job.deadline %></td>
+						    </tr>
+						    <% end %>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>      
+
+    </div>
+  </section>
+
+<%= render 'shared/bottom_section' %>

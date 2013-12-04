@@ -1,61 +1,28 @@
 <section id="content">
-  <div class="row-fluid">
-    <div class="span12">
-
-
-
-
-<div class="row-fluid">
-  
-  <div class="span1">
-  </div>
-  
-  <div class="span6">
-    <h3><%= @job.title %> </h3>
-    <h3>Job posted by: <%= User.find(@job.user_id).name %></h3>
-    <h3>Company:  <%= User.find(@job.user_id).company %></h3>
-    <h3>Apply by: <%= l @job.deadline, format: :short %>
-    <br><br>
-
-    <div class="jobdesc"> Description: <%= @job.description %><br>
+  <div class="container"> 
+    <div class="row-fluid">
+      <div class="span12 offset1">             
+        <div class="span6">
+          <h1><%= @job.title %> </h1>
+          <h3>Job posted by: <%= User.find(@job.user_id).name %></h3>
+          <h3>Company:  <%= User.find(@job.user_id).company %></h3>
+          <p>Apply by: <%= l @job.deadline, format: :short %></p>
+          <br>
+          <div class="jobdesc"> Description: <%= @job.description %><br>
+          </div>
+          <br>
+          <h4>Reply to: <%= @job.contact %> </h4><br>
+          <%= link_to 'Back', jobs_path, class: "btn-main-small" %> <% if current_user.id == @job.user_id.to_i %>
+            <%= link_to 'Edit', edit_job_path(@job), class: "btn-main-small" %> 
+          <%end%>
+        </div>
+        <div class="span4"><br><br>
+          <%= image_tag("portfolio3.jpg") %>
+        </div>
+      </div>
+      </div>
     </div>
-    <br>
-    <h4>Reply to: <%= @job.contact %> </h4><br><br>
- 
-
-  <%= link_to 'Back', jobs_path, class: "btn-main-small" %> <% if current_user.id == @job.user_id.to_i %>
-          <%= link_to 'Edit', edit_job_path(@job), class: "btn-main-small" %> 
-        <%end%>
-   </div>
-  <div class="span4"><br><br>
-<%= image_tag("portfolio3.jpg") %>
-</div>
-</div>
-
-
-  <div class="span1">
-
-       
-        
   </div>
-
-  <div class="span2">
-  </div>
-
-
-</div>
-
-
-
-
-
-        
-     
-
-
-
-
-
-</div>
-</div>
 </section>
+
+<%= render 'shared/bottom_section' %>
