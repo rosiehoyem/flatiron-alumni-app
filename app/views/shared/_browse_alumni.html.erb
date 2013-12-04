@@ -1,0 +1,145 @@
+  <div class="span12">
+    <div class="well well-sm">
+      <%= render 'users/simple_search' %>
+    </div>
+  </div>
+
+<section id="content">
+  <% i = @users.size %>
+  <% i-= 1 %>
+  <% while i >=0 %>
+  <div class="row-fluid">
+    <div class="span3">
+      <% if !@users[i].attachment.blank? %> 
+        <%= image_tag @users[i].attachment, :size => "260x320" %>
+        <% elsif !@users[i].profile_image.blank? %> 
+        <%= image_tag @users[i].profile_image, :size => "260x320" %>
+        <% else %>
+          <%= image_tag("missing_profile.png", :size => "260x320") %>
+        <% end %>  
+      <div class="title-box text-center">
+        <p>
+          <%= @users[i].name %> 
+        </p>
+      </div>
+      <ul class="team-social-icons text-center">
+        <li>
+        <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i].linkedin %> 
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-rss icon-large\"> </i>"), @users[i].blog_url %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i].github %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i].twitter %>
+        </li>
+      </ul>
+      <div class="text-center">
+       <%= link_to 'Full Profile', user_path(@users[i]), class: "btn-main" %>
+      </div>
+    </div>
+
+    <div class="span3">
+      <% if !@users[i-1].attachment.blank? %> 
+        <%= image_tag @users[i-1].attachment, :size => "260x320" %>
+          <% elsif !@users[i-1].profile_image.blank? %> 
+        <%= image_tag @users[i-1].profile_image, :size => "260x320" %>
+        <% else %>
+          <%= image_tag("missing_profile.png", :size => "260x320") %>
+        <% end %> 
+      <div class="title-box text-center">
+        <p>
+          <%= @users[i-1].name %> 
+        </p>
+      </div>
+      <ul class="team-social-icons text-center">
+        <li>
+          <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-1].linkedin %> 
+        </li>
+        <li>
+          <%= link_to raw("<i class=\"icon-rss icon-large\"> </i>"), @users[i-1].blog_url %>
+        </li>
+        <li>
+          <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-1].github %>
+        </li>
+        <li>
+          <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-1].twitter %>
+        </li>
+      </ul>
+      <div class="text-center">
+        <%= link_to 'Full Profile', user_path(@users[i-1]), class: "btn-main" %>
+      </div>
+    </div>
+
+    <div class="span3">
+      <% if !@users[i-2].attachment.blank? %> 
+        <%= image_tag @users[i-2].attachment, :size => "260x320" %>
+        <% elsif !@users[i-2].profile_image.blank? %> 
+        <%= image_tag @users[i-2].profile_image, :size => "260x320" %>
+        <% else %>
+          <%= image_tag("missing_profile.png", :size => "260x320") %>
+      <% end %> 
+      <div class="title-box text-center">
+        <p>
+          <%= @users[i-2].name %> 
+        </p>
+      </div>
+      <ul class="team-social-icons text-center">
+        <li>
+        <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-2].linkedin %> 
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-rss icon-large\"> </i>"), @users[i-2].blog_url %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-2].github %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-2].twitter %>
+        </li>
+      </ul>
+      <div class="text-center">
+      <%= link_to 'Full Profile', user_path(@users[i-2]), class: "btn-main" %>
+      </div>
+    </div>
+
+    <div class="span3">
+      <% if !@users[i-3].attachment.blank? %> 
+        <%= image_tag @users[i-3].attachment, :size => "260x320" %>
+        <% elsif %> 
+        <%= image_tag @users[i-3].profile_image, :size => "260x320" %>
+        <% else !@users[i-3].profile_image%>
+          <%= image_tag("missing_profile.png", :size => "260x320") %>
+      <% end %>
+      <div class="title-box text-center">
+        <p>
+          <%= @users[i-3].name %> 
+        </p>
+      </div>
+      <ul class="team-social-icons text-center">
+        <li>
+        <%= link_to raw("<i class=\"icon-linkedin icon-large\"> </i>"), @users[i-3].linkedin %> 
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-rss icon-large\"> </i>"), @users[i-3].blog_url %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-github icon-large\"> </i>"), @users[i-3].github %>
+        </li>
+        <li>
+        <%= link_to raw("<i class=\"icon-twitter icon-large\"> </i>"), @users[i-3].twitter %>
+        </li>
+      </ul>
+      <div class="text-center">
+        <%= link_to 'Full Profile', user_path(@users[i-3]), class: "btn-main" %>
+      </div>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <br>
+  <% i = i - 4 %>
+  <% end %>
+</section>

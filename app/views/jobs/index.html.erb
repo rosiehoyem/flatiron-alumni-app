@@ -1,15 +1,14 @@
 <section id="content">
-  <div class="container">
-    
+  <div class="container">  
     <div class="row-fluid">
       <div class="span12">
 
-<h2>Current openings</h2>
+      <h2>Current openings</h2>
 
-<% i = @jobs.all.size - 1%>
+      <% i = @jobs.all.size - 1%>
 
-<% while i >= 0 %>
-<div class="row-fluid">
+      <% while i >= 0 %>
+      <div class="row-fluid">
   
     <div class="span6"> 
       <ul class="unstyled pricing-table text-center">
@@ -74,13 +73,9 @@
 
 
 
-
-
-
-
-
-
-    
+    <hr>
     </div>
   </div>
 </section>
+
+<%= render 'shared/bottom_section' %>

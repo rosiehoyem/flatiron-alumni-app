@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
   helper_method :forem_user
 
-  def after_sign_in_path_for(resource)
+ def after_sign_in_path_for(resource)
     if session[:new_emp] == true
       session[:new_emp] = nil 
       edit_employer_profile_path(current_user)
@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
       user_path(current_user)
     end
   end
-
 
   private
 

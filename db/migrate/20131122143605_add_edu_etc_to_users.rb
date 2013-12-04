@@ -5,6 +5,6 @@ class AddEduEtcToUsers < ActiveRecord::Migration
     add_column :users, :blog_url, :string
     add_column :users, :past_work, :string
     add_column :users, :current_employer, :string, :default => 'Looking for opportunities'
-    add_column :users, :profile_image, :string, :default => 'missing_profile.jpg'
+    add_column :users, :profile_image, :string
   end
 end

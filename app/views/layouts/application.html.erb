@@ -44,18 +44,19 @@
               <li>
                 <%= link_to "Alumni", main_app.alumni_path %>
               </li>
-              <li>
-                <a target="_blank" href="http://blog.flatironschool.com/">Blog</a>
-              </li>
+
               <% elsif current_user && current_user.employer == true %>
                <li class="menu-item">
-                <%= link_to "Dashboard", employer_path %>
+                <%= link_to "Alumni", employer_path %>
               </li>
                <li>
-                  <%= link_to "Browse Projects", main_app.projects_path %>
+                  <%= link_to "Projects", main_app.projects_path %>
               </li>
-              <li class="menu-item">
+              <li>
                 <%= link_to "Post A Job", new_job_path %>
+              </li>
+              <li>
+                <%= link_to "Company Profile", show_employer_profile_path(current_user) %>
               </li>
               <% end %>
 
@@ -113,5 +114,5 @@
       }(window.jQuery)
     </script>
    
-    </body>
+  </body>
 </html>

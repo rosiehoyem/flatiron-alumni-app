@@ -1,10 +1,3 @@
-<section id="content">
-  <div class="row-fluid">
-    <div class="span12">
-
-
-
-
 <head>
   <script>
 function validateForm()
@@ -19,41 +12,55 @@ if (y==null || y=="")
 }
 </script>
 </head>
-<br><br>
-<h2> Please add a company name to your profile </h2>
 
-<table class="newemp">
-  
- <tbody>
+<section id="content">
+  <div class= "container">
+    <div class="row-fluid">
+      <div class="span12">
 
+      <h3>Edit Employer Profile </h3>
+      <%= form_for @emp, :url => update_employer_path, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
+        <h4>First Name:</h4>
+        <%= f.text_field :firstname %>
+       <h4>Last Name: </h4>
+        <%= f.text_field :lastname %>
+        <% if @emp.company.nil? %>
+          <h4><em> <%= "Please add a company name to your profile" %><em></h4>
+        <% else %>
+          <h4><%= "Company: " %></h4>
+        <% end %>  
+       <%= f.text_field :company %>
+       <h4>Email: </h4>
+       <%= f.text_field :email %>  
+        <%= f.hidden_field :id, :value => @emp.id %>
+        <br><br>
+       <%=f.submit 'Update Profile', class: "btn" %>
+      <% end %>
 
-<%= form_for @emp, :url => updy_emp_path, :html => { :id => "emp_prof", :onsubmit => "return validateForm()" } do |f| %>
- <tr><td class="emp"> </td><td><%= f.text_field :company, :placeholder => "Company Name" %></td><td> <%=f.submit 'Add', :class => "btn-dark-sm" %></td></tr> 
-  <%= f.hidden_field :id, :value => @emp.id %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Post Title</th>
+              <th>Deadline</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @emp.jobs.each do |job| %>
+            <tr>
+              <td><strong><%= link_to job.title, job_path(job) %></strong></td>
+              <td><%= job.deadline %></td>
+              <td><%= link_to 'Delete Job Post', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Show Job Post', @job %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
- </tbody>
-</table>
-
-<% end %>
-
-<br><br><br><br><br>
-<section id="brec">
-  <div class="image-break"> </div>
+   
+          
+      </div>
+    </div>
+  </div>
 </section>
-<section id="message">
-<div class="container">
-<div class="row-fluid">
-<div class="span12 text-center">
-<h2>Far and away the best prize that life has to offer is the chance to work hard at work worth doing.<br> ~Theodore Roosevelt 
-</h2>
-</div>
-</div>
-</div>
-</section>
-
-
-</div>
-</div>
-</section>
-
+<%= render 'shared/bottom_section' %>
 
