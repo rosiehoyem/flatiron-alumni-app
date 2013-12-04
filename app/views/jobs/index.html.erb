@@ -24,6 +24,21 @@
      </li>   
     </ul>      
   </div>
+  <% if i == 0  %>
+     <div class="span6">
+    <ul class="unstyled pricing-table active text-center">
+      <li class="headline">
+    <h2><i class="icon-bullhorn">  </i>  </h2>
+    </li>
+    <li class="price">MORE JOBS ARE COMING SOON </li>
+    <li class="info">Posted by: The FIS</li></li>
+    <li class="features first"><i class="icon-calendar"> </i> stay tuned! Jobs are being posed daily<br> <i class="icon-envelope"></i> info@flatironschool.com</li> 
+     <li class="features last">
+
+     </li>    
+    </ul>      
+
+    <% else %>
   <div class="span6">
     <ul class="unstyled pricing-table active text-center">
       <li class="headline">
@@ -36,6 +51,7 @@
      <%= link_to "Details", @jobs[i-1], class: "btn-main-small" %>
      </li>    
     </ul>      
+    <% end %>
 
 
   </div>
