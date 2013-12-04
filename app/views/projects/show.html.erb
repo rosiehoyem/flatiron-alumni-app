@@ -68,6 +68,7 @@
           <% if current_user.employer != true %>
           <small><%= link_to 'Edit Details of Project', edit_project_path(@project) %></small>
           <% end %> 
+          <h5><%= link_to 'Back to All Projects', projects_path %></h5>
         </div>
       </div>
             
@@ -106,6 +107,7 @@
   </div>
 </section>
 
+<%= render 'shared/bottom_section' %>
 
 
 

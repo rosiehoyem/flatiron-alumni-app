@@ -73,7 +73,7 @@
           <%= form_for(@project_picture) do |f| %> 
           <%= f.file_field :attachment %> 
           <div class="text-left">
-          <%= f.submit "Add new photo" %> 
+          <%= f.submit "Add new photo", class: "btn" %> 
           </div>
           <% end %> 
           <h3> Add Your Contribution: </h3>
@@ -86,7 +86,7 @@
           <div class="actions">
             <%= submit_tag %>
           </div>
-          <% end %>
+          <% end %> 
         </div>
 
       </div>
