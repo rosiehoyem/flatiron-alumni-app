@@ -5,6 +5,8 @@ class ForumsController < ApplicationController
   # GET /forums.json
   def index
     @forums = Forum.all(:order => "created_at desc", :limit => 10)
+    @mainnew = MainTopic.new
+    @mains = MainTopic.all
   end
 
   # GET /forums/1
@@ -17,6 +19,7 @@ class ForumsController < ApplicationController
   # GET /forums/new
   def new
     @forum = Forum.new
+    @main = MainTopic.find(params[:main])
   end
 
   # GET /forums/1/edit
@@ -71,6 +74,6 @@ class ForumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def forum_params
-      params[:forum].permit(:title, :user_id, :content)
+      params[:forum].permit(:title, :user_id, :content, :main_topic_id)
     end
 end

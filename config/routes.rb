@@ -1,5 +1,7 @@
 FlatironAlumniApp::Application.routes.draw do
 
+  resources :main_topics
+
   get "users/name_search" => "users#name_search"
   get 'users/sign_out'=> 'sessions#destroy', as: :logitout
   post 'users/:id/edit' => 'users#update'

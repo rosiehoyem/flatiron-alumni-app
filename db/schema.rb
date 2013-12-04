@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201191912) do
+ActiveRecord::Schema.define(version: 20131203210732) do
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20131201191912) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "main_topic_id"
   end
 
   create_table "jobs", force: true do |t|
@@ -124,6 +125,12 @@ ActiveRecord::Schema.define(version: 20131201191912) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "deadline"
+  end
+
+  create_table "main_topics", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "topic"
   end
 
   create_table "project_contributors", force: true do |t|

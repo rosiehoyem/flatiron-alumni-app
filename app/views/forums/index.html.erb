@@ -16,6 +16,11 @@
     <p>The Forum is here for you to share or find information. Ask a question, start a debate, post a tip, or just say what's on your mind. </p>
     </div><! ends 3 cols>
 <div class="span7">  
+
+  <% @mains.each do |main| %>
+  <h2><%= main.topic.capitalize %></h2> 
+    
+
   
       <table class="table table-striped">
         <thead>
@@ -26,9 +31,8 @@
             <th>Options</th>
           </tr>
         </thead>
-
+       <% main.forums.each do |forum|  %>
         <tbody>
-          <% @forums.each do |forum| %>
             <tr>
               <td><%= link_to forum.title, forum %></td>
               <td> <%= User.find(forum.user_id).firstname %> </td>
@@ -40,10 +44,24 @@
           <% end %>
         </tbody>
       </table>
-
+      <%= link_to 'New Topic', new_forum_path(:main => main.id), class: "btn-main-small" %><br><br><br>
+      <hr>
+<%end %>
       <br>
 
-      <%= link_to 'New Topic', new_forum_path, class: "btn-main-small" %>
+
+
+      
+
+<br><br>
+
+      <%= form_for @mainnew do |f| %> 
+
+      <%= f.text_field :topic %>
+      <%= f.submit "Add new Main Topic", :class => "btn-dark-sm" %>
+     
+      <% end %> 
+
       <br><br>
 </div> <! ends 7 cols for table >
   <div class="span1">
