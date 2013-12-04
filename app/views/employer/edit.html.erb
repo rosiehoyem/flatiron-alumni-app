@@ -25,9 +25,9 @@ if (y==null || y=="")
        <h4>Last Name: </h4>
         <%= f.text_field :lastname %>
         <% if @emp.company.nil? %>
-          <%= '<h4><em> Please add a company name to your profile <em></h4>' %>
+          <h4><em> <%= "Please add a company name to your profile" %><em></h4>
         <% else %>
-          <%= '<h4>Company: </h4>' %>
+          <h4><%= "Company: " %></h4>
         <% end %>  
        <%= f.text_field :company %>
        <h4>Email: </h4>
@@ -36,6 +36,28 @@ if (y==null || y=="")
         <br><br>
        <%=f.submit 'Update Profile', class: "btn" %>
       <% end %>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Post Title</th>
+              <th>Deadline</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @emp.jobs.each do |job| %>
+            <tr>
+              <td><strong><%= link_to job.title, job_path(job) %></strong></td>
+              <td><%= job.deadline %></td>
+              <td><%= link_to 'Delete Job Post', @job, method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Show Job Post', @job %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+   
+          
       </div>
     </div>
   </div>
