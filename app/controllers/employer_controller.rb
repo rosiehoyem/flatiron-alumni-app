@@ -9,7 +9,11 @@ class EmployerController < ApplicationController
     @emp = User.find(params[:id])
   end
 
-  def updy
+  def show
+    @emp = User.find(params[:id])
+  end
+
+  def update
     emp = User.find(params[:id])
     emp.update(user_params)
     redirect_to employer_path

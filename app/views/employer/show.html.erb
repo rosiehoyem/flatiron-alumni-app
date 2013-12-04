@@ -1,0 +1,59 @@
+
+<!--Content Section One-->
+  <section id="blog">
+    <div class="container">
+      
+      <div class="row-fluid">
+          
+
+          
+          <!--Alumnus Summary -->
+          <div class="well well-sm">
+            <div class="row-fluid blog-article">
+              <div class="span7 offset1">
+                <h2><%= @emp.name %></h2>
+
+                <% if @emp.id == current_user.id %> 
+                <h6> <%= link_to 'edit profile', edit_user_path(@emp) %> </h6>
+                <% end %> 
+              </div>
+
+              <!--Right Side Bar-->
+              <div class="span3 sidebar-container">
+                <h3><%= @emp.current_employer %></h3>
+                <p>Location: <%= @emp.location %></p>
+                
+                <h3>Links</h3>
+                <ul class="unstyled blog-links">
+                  <li><%= link_to "LinkedIn Profile", @emp.linkedin %></li>
+                  <li><%= link_to "Twitter", @emp.twitter %></li>
+                </ul>
+              </div>
+              <div class="row-fluid blog-article">
+	              <div class="span10 offset1">
+	              	<h3>Project Contributions</h3>
+									<table class="table table-striped">
+									  <thead>
+									    <tr>
+									      <th>Project Name</th>
+									      <th>Contribution</th>
+									    </tr>
+									  </thead>
+									  <tbody>
+									  	<% @emp.project_contributors.each do |project_contributor| %>
+									    <tr>
+									      <td><strong><%= link_to project_contributor.project.name, project_path(project_contributor.project) %></strong></td>
+									      <td><%= project_contributor.contribution %></td>
+									    </tr>
+									    <% end %>
+									  </tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+          </div><!--End Span-->
+        </div>
+
+      </div>
+    </div>
+  </section>

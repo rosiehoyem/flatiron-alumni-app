@@ -70,7 +70,6 @@
         <% @users.each do |user| %>
         <!--Alumnus Profile-->
         <div class="span3">
-          <!-- <img src="img/team1.jpg" alt="Title"> -->
           <%= image_tag user.profile_image, alt: user.name, size: "300x260" %>
           <div class="title-box text-center">
             <p><%= user.name %> | <span class="dark-gray"><em><%= user.current_employer %></em></span></p>
@@ -79,7 +78,7 @@
           <ul class="team-social-icons text-center">
               <li><a class="twitter" href="<%= user.twitter %>" target="_blank"><i class="icon-twitter icon-large"></i></a></li>
               <li><a class="facebook" href="<%= user.github %>" target="_blank"><i class="icon-github icon-large"></i></a></li>
-              <li><a class="instagram" href="<%= user.blog_url %>.com" target="_blank"><i class="icon-rss icon-large"></i></a></li>
+              <li><a class="rss" href="<%= user.blog_url %>.com" target="_blank"><i class="icon-rss icon-large"></i></a></li>
               <li><a class="linkedin" href="<%= user.linkedin %>" target="_blank"><i class="icon-linkedin icon-large"></i></a></li>
           </ul> 
         </div>

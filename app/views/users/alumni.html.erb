@@ -19,9 +19,11 @@
               <div class="span7 offset1">
                 <h2><%= user.name %></h2>
                 <% if !user.attachment.blank? %> 
-                <%= image_tag(user.attachment_url(:thumb)) %>
-                <% else %> 
-                <%= image_tag(user.profile_image, :size => "200x200", :alt => "Student Profile Image") %>
+                  <%= image_tag(user.attachment_url(:thumb)) %>
+                <% elsif !user.profile_image.blank?%>  
+                  <%= image_tag(user.profile_image, :size => "200x200") %>
+                <% else %>
+                  <%= image_tag("missing_profile.png", :size => "200x200") %>
                 <% end %> 
                 <% if !user.bio.blank? %> 
                 <p><%= user.bio %><p> <br /> 

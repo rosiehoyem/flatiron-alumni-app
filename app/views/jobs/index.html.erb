@@ -1,70 +1,51 @@
 <section id="content">
-  <div class="container">
-    
+  <div class="container">  
     <div class="row-fluid">
       <div class="span12">
 
-<h2>Current openings</h2>
+      <h2>Current openings</h2>
 
-<% i = @jobs.all.size - 1%>
+      <% i = @jobs.all.size - 1%>
 
-<% while i >= 0 %>
-<div class="row-fluid">
+      <% while i >= 0 %>
+      <div class="row-fluid">
   
-    <div class="span6"> 
-      <ul class="unstyled pricing-table text-center">
-      <li class="headline">
-    <h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i].title, @jobs[i] %></h2>
-    </li>
-    <li class="price"><%= @jobs[i].description[0, 150] %>... </li>
-    <li class="info">Posted by: <%= User.find(@jobs[i].user_id).firstname %> At: <%= l @jobs[i].created_at, format: :short %></li>
-    <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i].contact%></li> 
-    <li class="features last">
-     <%= link_to "Details", @jobs[i], class: "btn-main-small" %>
-     </li>   
-    </ul>      
-  </div>
-  <div class="span6">
-    <ul class="unstyled pricing-table active text-center">
-      <li class="headline">
-    <h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i-1].title, @jobs[i-1] %></h2>
-    </li>
-    <li class="price"><%= @jobs[i-1].description[0, 150] %>... </li>
-    <li class="info">Posted by: <%= User.find(@jobs[i-1].user_id).firstname %> At: <%= l @jobs[i-1].created_at, format: :short %></li></li>
-    <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i-1].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i-1].contact%></li> 
-     <li class="features last">
-     <%= link_to "Details", @jobs[i-1], class: "btn-main-small" %>
-     </li>    
-    </ul>      
+        <div class="span6"> 
+          <ul class="unstyled pricing-table text-center">
+          <li class="headline">
+        <h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i].title, @jobs[i] %></h2>
+        </li>
+        <li class="price"><%= @jobs[i].description[0, 150] %>... </li>
+        <li class="info">Posted by: <%= User.find(@jobs[i].user_id).firstname %> At: <%= l @jobs[i].created_at, format: :short %></li>
+        <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i].contact%></li> 
+        <li class="features last">
+         <%= link_to "Details", @jobs[i], class: "btn-main-small" %>
+         </li>   
+        </ul>      
+      </div>
+      <div class="span6">
+        <ul class="unstyled pricing-table active text-center">
+          <li class="headline"><h2><i class="icon-lightbulb">  </i>  <%= link_to @jobs[i-1].title, @jobs[i-1] %></h2>
+          </li>
+          <li class="price"><%= @jobs[i-1].description[0, 150] %>... 
+          </li>
+          <li class="info">Posted by: <%= User.find(@jobs[i-1].user_id).firstname %> At: <%= l @jobs[i-1].created_at, format: :short %></li></li>
+          <li class="features first"><i class="icon-calendar"> </i> <%= l @jobs[i-1].deadline, format: :short %> <i class="icon-envelope"></i> <%= @jobs[i-1].contact%>
+          </li> 
+          <li class="features last"><%= link_to "Details", @jobs[i-1], class: "btn-main-small" %>
+          </li>    
+        </ul>      
+      </div>
+    </div>
 
+    <% i-=2 %>
 
-  </div>
-    <div class="span1">
-  </div>
-</div>
+    <% end %>
 
-<% i-=2 %>
-
-<% end %>
-
-
-
- <% if current_user.employer == true %>
-        <%= link_to 'Post a New Job', new_job_path %>
-        <% end %>
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-    
+    <% if current_user.employer == true %>
+            <%= link_to 'Post a New Job', new_job_path %>
+            <% end %>
+    <hr>
     </div>
   </div>
 </section>
