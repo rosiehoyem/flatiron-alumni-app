@@ -16,7 +16,7 @@ FlatironAlumniApp::Application.routes.draw do
   
   get '/employer_dash' => 'employer#index', as: :employer
   get '/employer/:id/edit' => 'employer#edit', as: :edit_employer_profile
-  patch '/employer/:id/edit' => 'employer#updy', as: :update_employer
+  patch '/employer/:id/edit' => 'employer#update', as: :update_employer
   get '/employer/:id' => 'employer#show', as: :show_employer_profile
 
   get "projects/:id/add_contributor" => "projects#add_contributor"

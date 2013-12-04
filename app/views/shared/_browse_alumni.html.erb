@@ -4,7 +4,7 @@
     </div>
   </div>
 
-<section id="team">
+<section id="content">
   <% i = @users.size %>
   <% i-= 1 %>
   <% while i >=0 %>
@@ -19,10 +19,7 @@
         <% end %>  
       <div class="title-box text-center">
         <p>
-          <%= @users[i].name %> | 
-          <span class="dark-gray">
-            <em> <%= @users[i].current_employer[0..25] %>
-          </span>
+          <%= @users[i].name %> 
         </p>
       </div>
       <ul class="team-social-icons text-center">
@@ -54,10 +51,7 @@
         <% end %> 
       <div class="title-box text-center">
         <p>
-          <%= @users[i-1].name %> | 
-          <span class="dark-gray">
-          <em> <%= @users[i-1].current_employer %></em>
-          </span>
+          <%= @users[i-1].name %> 
         </p>
       </div>
       <ul class="team-social-icons text-center">
@@ -89,10 +83,7 @@
       <% end %> 
       <div class="title-box text-center">
         <p>
-          <%= @users[i-2].name %> | 
-          <span class="dark-gray">
-          <em> <%= @users[i-2].current_employer %></em>
-          </span>
+          <%= @users[i-2].name %> 
         </p>
       </div>
       <ul class="team-social-icons text-center">
@@ -113,7 +104,6 @@
       <%= link_to 'Full Profile', user_path(@users[i-2]), class: "btn-main" %>
       </div>
     </div>
-    <br>
 
     <div class="span3">
       <% if !@users[i-3].attachment.blank? %> 
@@ -125,10 +115,7 @@
       <% end %>
       <div class="title-box text-center">
         <p>
-          <%= @users[i-3].name %> | 
-          <span class="dark-gray">
-          <em> <%= @users[i-3].current_employer %></em>
-          </span>
+          <%= @users[i-3].name %> 
         </p>
       </div>
       <ul class="team-social-icons text-center">
@@ -150,6 +137,8 @@
       </div>
     </div>
   </div>
+  <br>
+  <hr>
   <br>
   <% i = i - 4 %>
   <% end %>
