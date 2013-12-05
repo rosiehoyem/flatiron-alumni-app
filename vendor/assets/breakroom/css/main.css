@@ -13,6 +13,10 @@
    Global styles
    ========================================================================== */
 
+.controls{
+  width: 80% !important;
+}
+
 .bottompad {
   height: 400px;
 }
@@ -23,12 +27,12 @@
 }
 .padded {
   position:absolute;
-  right: 350px;
-  top:220px;
-
+  right: 250px;
+  top: 220px;
+:style => "width: 100%;"  ;
 }
 
-@media (max-width: 1455px) {
+@media (max-width: 1300px) {
 
 .padded
 {
@@ -45,7 +49,7 @@
   text-align: center; 
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
    font-size: 16px !important;
-   width: 140px;
+   width: 30%;
    border-radius: 5px !important;
   
 }  
@@ -54,9 +58,9 @@
 select {
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
    font-size: 18px !important;
-   width: 140px;
+   width: 30%;
    border-radius: 5px !important;
-   margin-left: 20px;
+   margin-left: 5px;
 }   
 .jobimg {
   margin-left: 35px;

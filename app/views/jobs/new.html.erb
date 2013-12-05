@@ -1,35 +1,24 @@
 <section id="content">
   <div class="container"> 
     <div class="row-fluid">
-      <div class="span12"> 
         <h1>New Job Posting</h1>
         <br>
         <% if !current_user || current_user.employer == false %>
           <br>
           You Don't have permission to Post a Job:(
         <% else %>
-          <% if @job.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
-
-              <ul>
-              <% @job.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-              <% end %>
-              </ul>
-            </div>
-          <% end %>
+          <div class="span6">
+             <%= render 'form' %>
+          </div>
+          <div class="span5 pull-right"><br><br>
+            <%= image_tag("lapt.png", :style => "width: 80%; border-radius: 5px;") %>
+          </div>
+          
         <% end %>
       </div>
-      <div class="span6">
-          <%= render 'form' %>
-      </div>
-      <div class="span4">
-        <%= image_tag("lapt.png", :style => "size: 50%;") %>
-      </div>
-    </div>
+      
+</div>
 
-  </div>
 </section>
 
 <%= render 'shared/bottom_section' %>
