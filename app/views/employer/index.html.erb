@@ -1,13 +1,16 @@
-<section id="blog">
-  <div class="container">
+
+  <section id="content">
+    
     <div class="row-fluid">
-      <div class="span10">
-        <h2>Browse Developer Profiles</h2>
-      </div>
-      <div class="span2 text-right"> 
-        <%= link_to "Edit Your Employer Profile", edit_employer_profile_path(current_user) %>
-      </div>
-    </div>
+        
+
+<h2>Browse Developer Profiles</h2>
+
+<%= render 'users/alumni' %>
+
+</section>
+
+
 
 <%= render 'shared/browse_alumni' %>
 
