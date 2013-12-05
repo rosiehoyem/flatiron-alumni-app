@@ -87,8 +87,13 @@
         <!--Contributors-->
          <% @project.project_contributors.each do |project_contributor| %>
         <div class="span3">
-          <!-- <img src="img/team1.jpg" alt="Title"> -->
-          <%=image_tag(project_contributor.user.profile_image, alt: project_contributor.user.name) %>
+          <% if !project_contributor.user.attachment.blank? %>
+                  <%= image_tag project_contributor.user.attachment_url(:thumb) %>
+                <% elsif !project_contributor.user.profile_image.blank? %>  
+                  <%= image_tag(project_contributor.user.profile_image, :size => "200x200") %>
+                <% else %>
+                  <%= image_tag("missing_profile.png", :size => "200x200") %>
+                <% end %>
           <div class="title-box text-center">
             <p><%= project_contributor.user.name %></span></p>
           </div>
