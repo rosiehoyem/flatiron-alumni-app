@@ -42,7 +42,7 @@ gem 'omniauth-linkedin'
 
 gem 'better_errors'
 gem 'binding_of_caller'
-#gem 'charlock_holmes' - optional for future transcoding of csv files
+#gem 'charlock_holmes'
 
 #for photo upload
 gem 'rmagick'
