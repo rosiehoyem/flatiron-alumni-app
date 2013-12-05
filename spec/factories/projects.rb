@@ -4,5 +4,8 @@ FactoryGirl.define do
   factory :project do
     name "Project Name"
     description "Project Description"
+    client { Faker::Company.name }
+    url { Faker::Internet.url }
+    photo Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/myfiles/myfile.jpg')))
   end
 end
