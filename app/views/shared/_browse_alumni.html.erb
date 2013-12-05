@@ -11,11 +11,11 @@
   <div class="row-fluid">
     <div class="span3">
       <% if !@users[i].attachment.blank? %> 
-        <%= image_tag @users[i].attachment, :size => "260x320" %>
+        <%= image_tag @users[i].attachment, :style =>"width: 100%; height: 260px;" %>
         <% elsif !@users[i].profile_image.blank? %> 
-        <%= image_tag @users[i].profile_image, :size => "260x320" %>
+        <%= image_tag @users[i].profile_image, :style =>"width: 100%; height: 260px;" %>
         <% else %>
-          <%= image_tag("missing_profile.png", :size => "260x320") %>
+          <%= image_tag("missing_profile.png", :style =>"width: 100%; height: 260px;") %>
         <% end %>  
       <div class="title-box text-center">
         <p>
@@ -43,11 +43,11 @@
 
     <div class="span3">
       <% if !@users[i-1].attachment.blank? %> 
-        <%= image_tag @users[i-1].attachment, :size => "260x320" %>
+        <%= image_tag @users[i-1].attachment, :style =>"width: 100%; height: 260px;" %>
           <% elsif !@users[i-1].profile_image.blank? %> 
-        <%= image_tag @users[i-1].profile_image, :size => "260x320" %>
+        <%= image_tag @users[i-1].profile_image, :style =>"width: 100%; height: 260px;" %>
         <% else %>
-          <%= image_tag("missing_profile.png", :size => "260x320") %>
+          <%= image_tag("missing_profile.png", :style =>"width: 100%; height: 260px;") %>
         <% end %> 
       <div class="title-box text-center">
         <p>
@@ -75,11 +75,11 @@
 
     <div class="span3">
       <% if !@users[i-2].attachment.blank? %> 
-        <%= image_tag @users[i-2].attachment, :size => "260x320" %>
+        <%= image_tag @users[i-2].attachment, :style =>"width: 100%; height: 260px;" %>
         <% elsif !@users[i-2].profile_image.blank? %> 
-        <%= image_tag @users[i-2].profile_image, :size => "260x320" %>
+        <%= image_tag @users[i-2].profile_image, :style =>"width: 100%; height: 260px;" %>
         <% else %>
-          <%= image_tag("missing_profile.png", :size => "260x320") %>
+          <%= image_tag("missing_profile.png", :style =>"width: 100%; height: 260px;") %>
       <% end %> 
       <div class="title-box text-center">
         <p>
@@ -107,11 +107,11 @@
 
     <div class="span3">
       <% if !@users[i-3].attachment.blank? %> 
-        <%= image_tag @users[i-3].attachment, :size => "260x320" %>
+        <%= image_tag @users[i-3].attachment, :style =>"width: 100%; height: 260px;" %>
         <% elsif %> 
-        <%= image_tag @users[i-3].profile_image, :size => "260x320" %>
+        <%= image_tag @users[i-3].profile_image, :style =>"width: 100%; height: 260px;" %>
         <% else !@users[i-3].profile_image%>
-          <%= image_tag("missing_profile.png", :size => "260x320") %>
+          <%= image_tag("missing_profile.png", :style =>"width: 100%; height: 260px;") %>
       <% end %>
       <div class="title-box text-center">
         <p>

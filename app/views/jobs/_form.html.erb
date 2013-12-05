@@ -6,20 +6,20 @@
       </div>  
       <div class="control-group">  
         <div class="controls"> 
-        <h4>Job Title:</h4> 
-        <%= f.text_field :title, placeholder: "Job Title", value: @job.title, style: "width:550px;" %>
+        <p>Job Title:</p> 
+        <%= f.text_field :title, placeholder: "Job Title", value: @job.title %>
         </div>  
       </div>
       <div class="control-group">  
         <div class="controls"> 
         <h4>Company:</h4> 
-        <%= f.text_field current_user[:company], value: current_user.company, style: "width:550px;" %>
+        <%= f.text_field current_user[:company], value: current_user.company %>
         </div>  
       </div>
       <div class="control-group">  
         <div class="controls"> 
          <h4>Description:</h4>    
-          <%= f.text_area :description, placeholder: "Description", style: "width:550px; height:250px;" %><br>
+          <%= f.text_area :description, placeholder: "Description", style: " height:250px;" %><br>
         </div>  
       </div>
       <div class="control-group">  
@@ -35,7 +35,7 @@
      
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <h4>Contact Email:</h4>    
-        <%= f.text_field :contact, value: current_user.email, style: "width:550px;" %><br>
+        <%= f.text_field :contact, value: current_user.email %><br>
         </div>  
       </div>
 
