@@ -1,15 +1,15 @@
 require 'csv'
-#require 'charlock_holmes/string' - needed for optional transcoding below
+# require 'charlock_holmes/string' 
 namespace :csv do 
   desc "Import CSV Data"
   task :import => :environment do 
 
     #optional code to transcode any new seed data #
-    # csv_file_path = 'db/data/data.csv'
+    # csv_file_path = 'db/data/data_encoded.csv'
     # content = File.read(csv_file_path)
     # detection = CharlockHolmes::EncodingDetector.detect(content)
     # utf_encoded = CharlockHolmes::Converter.convert content, detection[:encoding], 'UTF-8'
-    # File.write('data_encoded.CSV', utf_encoded)
+    # File.write('db/data/data_encoded2.CSV', utf_encoded)
     csv_file_path = 'db/data/data_encoded.csv'
 
     CSV.foreach(csv_file_path) do |column|
