@@ -76,6 +76,8 @@ GEM
       timers (~> 1.1.0)
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
+    codeclimate-test-reporter (0.2.0)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -272,6 +274,7 @@ DEPENDENCIES
   cancan!
   capybara
   carrierwave
+  codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise

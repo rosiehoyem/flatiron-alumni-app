@@ -78,4 +78,5 @@ group :test, :development do
   gem "faker"
   gem "pry"
   gem "launchy", "~> 2.3.0"
+  gem "codeclimate-test-reporter", require: nil
 end

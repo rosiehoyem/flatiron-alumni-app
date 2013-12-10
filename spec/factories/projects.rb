@@ -6,6 +6,6 @@ FactoryGirl.define do
     description "Project Description"
     client { Faker::Company.name }
     url { Faker::Internet.url }
-    photo Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/myfiles/myfile.jpg')))
+    photo Rack::Test::UploadedFile.new(File.open(File.join(Rails.root, '/spec/fixtures/test_images/test-image.png')))
   end
 end
