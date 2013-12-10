@@ -7,6 +7,7 @@ describe "Projects" do
       visit projects_path
       page.should have_content("Web App")
     end
+  end
   
   describe "POST /projects" do
     it "creates project" do

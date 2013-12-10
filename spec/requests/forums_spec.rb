@@ -7,6 +7,7 @@ describe "Forums" do
       visit forums_path
       page.should have_content("Forum Title")
     end
+  end
   
   describe "POST /forums" do
     it "creates forum" do

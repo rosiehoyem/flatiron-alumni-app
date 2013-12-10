@@ -1,4 +1,4 @@
-user_spec.rbrequire 'spec_helper'
+require 'spec_helper'
 
 feature 'User management' do
 	scenario "sign up alumnus user" do
@@ -9,7 +9,7 @@ feature 'User management' do
 		fill_in 'First Name', with: 'John'
 		fill_in 'Last Name', with: 'Doe'
 		fill_in 'Email', with: 'newuser@example.com'
-		fill_in 'Password', with: a'secret123'
+		fill_in 'Password', with: 'secret123'
 		fill_in 'Re-enter Password', with: 'secret123'
 		click_button 'Sign Up'
 

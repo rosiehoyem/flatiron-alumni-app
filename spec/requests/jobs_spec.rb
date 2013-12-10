@@ -7,6 +7,7 @@ describe "Jobs" do
       visit jobs_path
       page.should have_content("Great Job")
     end
+  end
   
   describe "POST /jobs" do
     it "creates job" do

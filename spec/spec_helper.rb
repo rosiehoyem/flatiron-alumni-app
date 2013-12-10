@@ -33,7 +33,7 @@ RSpec.configure do |config|
       FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
     end 
   end
-  end
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:

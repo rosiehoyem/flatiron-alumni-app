@@ -1,5 +1,5 @@
-require "spec_helper"
+# require "spec_helper"
 
-describe Welcome do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# describe Welcome do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end
