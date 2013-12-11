@@ -31,6 +31,7 @@ FlatironAlumniApp::Application.configure do
 
   config.assets.paths << "#{Rails.root}/vendor/assets/img"
   config.assets.paths << "#{Rails.root}/vendor/assets/font"
+  config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   config.assets.precompile += %w(.svg .eot. woff .ttf .otf)
 
