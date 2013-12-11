@@ -29,8 +29,8 @@ FlatironAlumniApp::Application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  config.assets.paths << "#{Rails.root}/vendor/assets/img"
-  config.assets.paths << "#{Rails.root}/vendor/assets/font"
+  config.assets.paths << "#{Rails.root}/vendor/assets/breakroom/img"
+  config.assets.paths << "#{Rails.root}/vendor/assets/breakroom/font"
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
   config.assets.precompile += %w(.svg .eot. woff .ttf .otf)
