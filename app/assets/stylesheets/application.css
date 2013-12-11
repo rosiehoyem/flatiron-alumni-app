@@ -14,4 +14,5 @@
  *= require ../../../vendor/assets/breakroom/css/main
  *= require ../../../vendor/assets/breakroom/css/custom-styles
  *= require_self
+ *= require_tree .
  */
