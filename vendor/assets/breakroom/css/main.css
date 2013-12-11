@@ -29,7 +29,6 @@
   position:absolute;
   right: 250px;
   top: 220px;
-:style => "width: 100%;"  ;
 }
 
 @media (max-width: 1300px) {
@@ -711,12 +710,12 @@ a.login {
 .bar-three      { width:100%; -moz-animation:bar-three 2.3s ease-out;   -webkit-animation:bar-three 2.3s ease-out;      }
 
 @-moz-keyframes bar-one       { 0%  { width:0px;} 100%{ width:100%;}   }
-@-moz-keyframes bar-two        { 0%  { width:0px;} 100%{ width::100%;}  }
-@-moz-keyframes bar-three      { 0%  { width:0px;} 100%{ width::100%;}  }
+@-moz-keyframes bar-two        { 0%  { width:0px;} 100%{ width:100%;}  }
+@-moz-keyframes bar-three      { 0%  { width:0px;} 100%{ width:100%;}  }
 
 @-webkit-keyframes bar-one       { 0%  { width:0px;} 100%{ width:100%;}   }
-@-webkit-keyframes bar-two        { 0%  { width:0px;} 100%{ width::100%;}  }
-@-webkit-keyframes bar-three      { 0%  { width:0px;} 100%{ width::100%;}  }
+@-webkit-keyframes bar-two        { 0%  { width:0px;} 100%{ width:100%;}  }
+@-webkit-keyframes bar-three      { 0%  { width:0px;} 100%{ width:100%;}  }
 
 
 
