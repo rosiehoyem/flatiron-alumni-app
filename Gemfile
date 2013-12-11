@@ -8,7 +8,7 @@ gem 'devise'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -49,7 +49,7 @@ gem 'rmagick'
 gem 'carrierwave'
 
 # add forem
-gem 'forem', :github => "radar/forem", :branch => "rails4"
+# gem 'forem', :github => "radar/forem", :branch => "rails4"
 gem 'friendly_id', github: "FriendlyId/friendly_id"
 gem 'cancan', git: "https://github.com/nukturnal/cancan.git"
 gem 'will_paginate', '3.0.4'
@@ -59,6 +59,8 @@ gem 'will_paginate', '3.0.4'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+gem 'capistrano', '~>2.0'
+gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
