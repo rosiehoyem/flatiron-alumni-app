@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203210732) do
+ActiveRecord::Schema.define(version: 20131219233052) do
 
   create_table "forums", force: true do |t|
     t.string   "title"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20131203210732) do
     t.string   "url"
     t.string   "client"
     t.string   "attachment"
+    t.string   "gitrepo"
   end
 
   create_table "replies", force: true do |t|

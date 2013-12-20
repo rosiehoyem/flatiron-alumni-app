@@ -16,21 +16,27 @@
         <div class="span6">
           <h3> Basic Info: </h3>
           <div class="control-group">  
-            <div class="controls">  
-              <!-- <input type="text" class="input-block-level" name="contact_name" id="input1" placeholder="Your name">  -->
+            <div class="controls"> 
+              <%= f.label :name %> 
               <%= f.text_field :name, class: "input-block-level" %> 
             </div>  
           </div>  
           <div class="control-group">  
-            <div class="controls">  
-              <!-- <input type="text" class="input-block-level" name="contact_email" id="input2" placeholder="Client"> --> 
+            <div class="controls"> 
+              <%= f.label :client %> 
               <%= f.text_field :client, class: "input-block-level" %> 
             </div>  
           </div>
           <div class="control-group">  
-            <div class="controls">  
-              <!-- <input type="text" class="input-block-level" name="contact_subject" id="input3" placeholder="URL (if deployed)"> --> 
+            <div class="controls"> 
+              <%= f.label :url %>  
               <%= f.text_field :url, class: "input-block-level" %> 
+            </div>  
+          </div>
+          <div class="control-group">  
+            <div class="controls"> 
+              <%= f.label :gitrepo %>  
+              <%= f.text_field :gitrepo, class: "input-block-level" %> 
             </div>  
           </div>
           <div class="control-group">  
@@ -50,11 +56,11 @@
               </div>
             </div>        
           </div>
- 
+          <br><br>
           <div class="text-left">  
-            <%= f.submit 'Update Project' %>
+            <%= f.submit 'Update Project', class: "btn" %>
           </div>
-    <% end %>   
+          <% end %>   
         </div>
 
         <div class="span6">
@@ -68,15 +74,18 @@
           </tr>
           </table>
           <% else %> 
-          <p> Upload screenshots of your project for the slideshow </p>
+          <p> Upload screenshots of your project for the slideshow. </p>
           <% end %> 
           <%= form_for(@project_picture) do |f| %> 
           <%= f.file_field :attachment %> 
           <div class="text-left">
-          <%= f.submit "Add new zhoto", class: "btn" %> 
+          <%= f.submit "Add new photo", class: "btn" %> 
           </div>
           <% end %> 
+
+
           <h3> Add Your Contribution: </h3>
+          <p>
           <%= form_tag("/projects/#{@project.id}/add_contributor", method: "get") do %>
           <div class="add-contribution">
             <div class="field">

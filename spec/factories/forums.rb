@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :forum do
+  	title "Forum Title"
+  	content	"Forum Content"
   end
 end

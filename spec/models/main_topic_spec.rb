@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe MainTopic do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is invalid without a topic" do
+		topic = FactoryGirl.build(:main_topic, topic: nil)
+		expect(topic).to have(1).errors_on(:topic)
+	end
 end

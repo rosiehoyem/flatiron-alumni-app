@@ -62,9 +62,13 @@
           <br />
           <p class="lead">Project Info</p>
           <p><%= @project.description %></p>
+          <% unless @project.gitrepo == nil %>
+          <p><%= link_to 'Visit Public Git Repository', @project.gitrepo %></p>
+          <% end %>
           <br />
           <a class="btn-main-small" href="<%= @project.url %>"><i class="icon-chevron-right"></i> Visit Project</a>
-          <br><br>
+          <br />
+          <br />
           <% if current_user.employer != true %>
           <small><%= link_to 'Edit Details of Project', edit_project_path(@project) %></small>
           <% end %> 

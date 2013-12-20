@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :project_contributor do
-    user
-    project
     contribution "Project Contribution"
   end
 end

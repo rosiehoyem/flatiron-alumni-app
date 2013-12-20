@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :search do
-    keywords "MyString"
-    location "MyString"
-    experience "MyString"
-    skills "MyString"
-    for_hire false
+    keywords "James"
+    location "New York"
+    experience "Marketing, Project Management"
+    skills "Ruby on Rails, Javascript"
+    for_hire true
   end
 end

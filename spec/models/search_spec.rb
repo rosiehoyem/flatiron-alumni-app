@@ -1,5 +1,8 @@
-require 'spec_helper'
+# require 'spec_helper'
 
-describe Search do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# describe Search do
+#   it "is returns an alum when searched by Keyword" do
+# 		search = FactoryGirl.build(:search, keyword: "James")
+# 		expect(search).to return
+# 	end
+# end

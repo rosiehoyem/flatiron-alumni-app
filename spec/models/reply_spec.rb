@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Reply do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is invalid without content" do
+		reply = FactoryGirl.build(:reply, content: nil)
+		expect(reply).to have(1).errors_on(:content)
+	end
 end

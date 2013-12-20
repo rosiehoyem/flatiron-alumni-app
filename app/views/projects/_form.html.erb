@@ -15,17 +15,26 @@
         <div class="span4">
           <div class="control-group">  
             <div class="controls">  
+              <%= f.label :name %> 
               <%= f.text_field :name, placeholder: "Project Name", class: "input-block-level" %> 
             </div>  
           </div>  
           <div class="control-group">  
-            <div class="controls">  
+            <div class="controls"> 
+              <%= f.label :client %>  
               <%= f.text_field :client, placeholder: "Client", class: "input-block-level" %>
             </div>  
           </div>
           <div class="control-group">  
             <div class="controls">  
+              <%= f.label :url %> 
               <%= f.text_field :url, placeholder: "Project URL", class: "input-block-level" %> 
+            </div>  
+          </div>
+          <div class="control-group">  
+            <div class="controls"> 
+              <%= f.label :gitrepo %>  
+              <%= f.text_field :gitrepo, placeholder: "Git Repository", class: "input-block-level" %> 
             </div>  
           </div>
          </div>
@@ -33,7 +42,7 @@
         <div class="span8">
           <div class="control-group">  
             <div class="controls">  
-              <!-- <textarea name="contact_message" id="input4" class="input-block-level" rows="8" placeholder="The message you want to send to me."></textarea>   -->
+              <%= f.label :description %>
               <%= f.text_area :description, class: "input-block-level", rows: "5", placeholder: "A good project write-up should include the context it was created (school/work/personal), what technologies are demonstrated, and any specific challenges or interesting features." %> 
             </div>
             <div class="controls">
